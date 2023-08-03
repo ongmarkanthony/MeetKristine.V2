@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { authenticateUser } from '../utils/userAuth';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userRole, setUserRole] = useState('');
+  const navigateTo = useNavigate();
+  navigateTo('/userDashboard');
 
   const handleLogin = () => {
     const role = authenticateUser(username, password);
     setUserRole(role);
   };
 
-  const handleLogout = () => {
-    setUserRole('');
-  }
+  switch (userRole) {
+    case 'User':
+      history.push('/userDashboard');
+      break;
+    case 'Manager':
+    case 'Admin':
+      history.push('/adminDashboard');
+      break;
+      default:
+      break;
+    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin();
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -26,7 +41,7 @@ const LoginPage = () => {
                 placeholder="Username"
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
             <label html for= "password" className="leading-7 text-sm text-gray-600">Password</label>
             <input
@@ -34,13 +49,12 @@ const LoginPage = () => {
                 placeholder= "password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
             </div>
-            <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={handleLogin}>Login</button>
+            <button className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg" onClick={handleLogin}>Login</button>
         </div>
     </div>
   );
 };
-
 export default LoginPage;
