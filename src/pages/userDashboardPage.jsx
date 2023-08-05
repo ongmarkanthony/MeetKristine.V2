@@ -9,6 +9,7 @@ function UserDashboard() {
     <Router>
         <Routes>
             <Route path="./components/header" element={<Header />} />
+            <Route path ="./pages/CreateProfile" element={<CreateProfile />} />
             <Route path="./components/footer" element={<Footer />} />
         </Routes>
     </Router>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LoginPage from './pages/loginPage';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import UserDashboard from './pages/userDashboardPage';
+import CreateProfile from './pages/CreateProfile';
 
 function App() {
   const [loggedInUserRole, setLoggedInUserRole] = useState('');
@@ -18,7 +19,10 @@ function App() {
           path="/userDashboard"
           element={
             loggedInUserRole === 'user' ? (
-              <UserDashboard />
+              <UserDashboard>
+                <CreateProfile />
+              </UserDashboard>
+              
             ) : (
               <Link to="/.pages/userDashboardPage">User Dashboard</Link>
             )
