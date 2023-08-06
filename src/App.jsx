@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import LoginPage from './pages/loginPage';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import UserDashboard from './pages/userDashboardPage';
-import CreateProfile from './pages/CreateProfile';
+import { BrowserRouter as Router, Route, Routes,} from 'react-router-dom';
+import UserDashboard from './pages/UserDashboard';
 
 function App() {
   const [loggedInUserRole, setLoggedInUserRole] = useState('');
@@ -13,33 +12,13 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage handleLogin={handleLogin} />} />
-        <Route
-          path="/userDashboard"
-          element={
-            loggedInUserRole === 'user' ? (
-              <UserDashboard>
-                <CreateProfile />
-              </UserDashboard>
-              
-            ) : (
-              <Link to="/.pages/userDashboardPage">User Dashboard</Link>
-            )
-          }
-        />
-       {/* <Route
-          path="/adminDashboard"
-          element={
-            loggedInUserRole === 'admin' ? (
-              <AdminDashboard />
-            ) : (
-              <Link to="/adminDashboard">Admin Dashboard</Link>
-            )
-          }
-        /> */}
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<LoginPage handleLogin={handleLogin} />} />
+        </Routes>
+        <Routes>
+            <Route path="/UserDashboard" component={UserDashboard} />
+        </Routes>
+      </Router>
   );
 }
 

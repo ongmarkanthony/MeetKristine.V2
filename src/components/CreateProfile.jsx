@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import ReactDOM from 'react-dom'; // Import ReactDOM correctly
+import UserDashboardHeader from '../UserDashboardHeader'; // Corrected component naming
 
 const CreateProfile = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ const CreateProfile = () => {
 
   return (
     <>
-      <Header />
+      <UserDashboardHeader/> {/* Corrected component usage */}
       <div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-control">
@@ -72,7 +72,7 @@ const CreateProfile = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
-      <Footer />
+      {/* You may add the Footer component here if it's available */}
     </>
   );
 };
