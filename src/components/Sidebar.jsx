@@ -1,4 +1,4 @@
-function Sidebar() {
+const Sidebar = () => {
   return (
     <Sidebar className="!sticky !w-[300px] flex h-screen md:hidden justify-start overflow-auto md:px-5 top-[0]">
       <div className="bg-gray-50_01 flex flex-col gap-[35px] items-center justify-start p-6 sm:px-5 w-full">
@@ -103,6 +103,6 @@ function Sidebar() {
       </div>
     </Sidebar>
   );
-}
+};
 
 export default Sidebar;
