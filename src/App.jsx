@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import LoginPage from './pages/loginPage';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import UserDashboard from './pages/userDashboardPage';
-import CreateProfile from './pages/CreateProfile';
+import React, { useState } from "react";
+import LoginPage from "./pages/loginPage";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import UserDashboard from "./pages/userDashboardPage";
+import CreateProfile from "./pages/CreateProfile";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
-  const [loggedInUserRole, setLoggedInUserRole] = useState('');
+  const [loggedInUserRole, setLoggedInUserRole] = useState("");
 
   const handleLogin = (userRole) => {
     setLoggedInUserRole(userRole);
@@ -18,17 +19,17 @@ function App() {
         <Route
           path="/userDashboard"
           element={
-            loggedInUserRole === 'user' ? (
+            loggedInUserRole === "user" ? (
               <UserDashboard>
                 <CreateProfile />
               </UserDashboard>
-              
             ) : (
               <Link to="/.pages/userDashboardPage">User Dashboard</Link>
             )
           }
         />
-       {/* <Route
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        {/* <Route
           path="/adminDashboard"
           element={
             loggedInUserRole === 'admin' ? (

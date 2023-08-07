@@ -2,7 +2,7 @@ import Sidebar from "../components/Sidebar";
 
 const AdminDashboard = () => {
   return (
-    <div className="bg-gray-50_02 flex sm:flex-col md:flex-col flex-row font-gilroy gap-[30px] items-start mx-auto sm:pr-5 pr-6 w-full">
+    <div className="bg-gray-50_02 flex sm:flex-col md:flex-col flex-row font-gilroy gap-30px items-start mx-auto sm:pr-5 pr-6 w-full">
       <Sidebar />
       <div className="flex-1 sm:h-[1056px] h-[1109px] md:h-[1965px] md:m,t-0 mt-6 md:px-5 relative w-full">
         <div className="absolute flex flex-col gap-[31px] inset-x-[0] items-center justify-start mx-auto top-[1%] w-full">
@@ -13,11 +13,7 @@ const AdminDashboard = () => {
             <div className="flex flex-row font-opensans gap-6 items-center justify-between w-[13%]">
               <div className="bg-white-A700 border border-blue_gray-100 border-solid flex flex-col h-14 items-end justify-start p-2 rounded-[50%] w-14">
                 <div className="md:h-9 h-[35px] mb-1 relative w-9">
-                  <Img
-                    className="absolute bottom-[0] h-8 left-[0] w-8"
-                    src="images/img_notification.svg"
-                    alt="notification"
-                  />
+                  <h2>Image Here</h2>
                   <div className="absolute bg-red-700 border border-blue_gray-50 border-solid flex flex-col h-[18px] items-start justify-start p-0.5 right-[0] rounded-[50%] top-[0] w-[18px]">
                     <Text className="font-semibold mb-0.5 ml-0.5 md:ml-[0] text-white-A700 text-xs">
                       2
@@ -26,11 +22,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
               <div className="border border-blue-A700 border-solid flex flex-col h-14 items-center justify-start p-1 rounded-[50%] w-14">
-                <Img
-                  className="h-12 md:h-auto rounded-[50%] w-12"
-                  src="images/img_profileimglarg.png"
-                  alt="profileImgLarg"
-                />
+                <h2>Image Here</h2>
               </div>
             </div>
           </div>
@@ -186,18 +178,10 @@ const AdminDashboard = () => {
               </div>
               <div className="bg-white-A700 flex flex-col items-center justify-end md:mt-0 mt-11 ppt-5 px-5 rounded-md w-[46%] md:w-full">
                 <div className="md:h-[201px] h-[350px] relative w-[96%]">
-                  <Img
-                    className="absolute bottom-[0] h-[186px] object-cover right-[0] w-[55%]"
-                    src="images/img_businessmanpoi.png"
-                    alt="businessmanpoi"
-                  />
+                  <h2>Image Here</h2>
                   <div className="absolute flex flex-col gap-11 items-start justify-start left-[0] pt-0.5 top-[0] w-[77%]">
                     <div className="flex flex-row items-end justify-startw-1/4 md:w-full">
-                      <Img
-                        className="h-6 mb-[3px] w-6"
-                        src="iamges/img_lightbult.svg"
-                        alt="lightbult"
-                      />
+                      <h2>Image Here</h2>
                       <Text className="font-medium ml-[5px] mt-[5px] text-black-900 text-lg">
                         Tip
                       </Text>
@@ -225,11 +209,7 @@ const AdminDashboard = () => {
                         Spend Analysis
                       </Text>
                       <div className="flex flex-row items-start justify-evenly w-full">
-                        <Img
-                          className="h-4 mb-[3px] w-4"
-                          src="images/img_arrowgrowthou.svg"
-                          alt="arrowgrowthOu"
-                        />
+                        <h2>Image Here</h2>
                         <Text className="mt-0.5 text-black-900 text-sm">
                           <span className="text-colors font-gilroy text-left font-normal">
                             88%
@@ -245,11 +225,7 @@ const AdminDashboard = () => {
                       <Text className="font-semibold ml-[3px] text-blue_gray-600 text-sm">
                         This Week
                       </Text>
-                      <Img
-                        className="h-5 w-5"
-                        src="images/img_arrowdown.svg"
-                        alt="arrowdown"
-                      />
+                      <h2>Image Here</h2>
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-end py-[3px] w-full">
@@ -289,11 +265,7 @@ const AdminDashboard = () => {
                                 </>
                               </Text>
                             </div>
-                            <Img
-                              classNames="h-2 w-3.5"
-                              src="iamges/img_arrow.svg"
-                              alt="Arrow"
-                            />
+                            <h2>Image Here</h2>
                           </div>
                         </div>
                       </div>
@@ -332,11 +304,7 @@ const AdminDashboard = () => {
                       <Text className="font-semibold text-blue_gray-600 text-sm">
                         This Month
                       </Text>
-                      <Img
-                        className="h-5 w-5"
-                        src="images.img_arrowdown.svg"
-                        alt="arrowdown One"
-                      />
+                      <h2>Image Here</h2>
                     </div>
                   </div>
                   <div
@@ -402,28 +370,16 @@ const AdminDashboard = () => {
         <div className="absolute bg-gray-50_01 md:h-[1056px] h-[1109px] inset-y-[0] my-auto pb-[53px] right-[0] shadow-bs w-[24%]">
           <div className="bg-gray-50_01 h-[1056px] mx-auto shadow-bs w-full"></div>
           <div className="absolute flex flex-row inset-x-[0] items-start justify-between mx-auto top-[0] w-full">
-            <Img
-              className="h-6 mb-0.5 w-6"
-              src="images/img_arrowleft.svg"
-              alt="arrowleft"
-            />
+            <h2>Image Here</h2>
             <Text className="font-semibold mt-1 text-blue_gray-900 text-lg">
               My Profile
             </Text>
-            <Img
-              className="h-6 mb-0.5 w-6"
-              src="images/img_share.svg"
-              alt="share"
-            />
+            <h2>Image Here</h2>
           </div>
           <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto pb-[5px] top-[6%] w-[45%]">
             <div className="flex flex-col gap-[21px] items-center justify-start w-full">
               <div className="border-[1.79px] bprder-blue-A700 border-solid flex flex-col h-[100px] items-center justify-start p-[7px] rounded-[50%] w-[100px]">
-                <Img
-                  className="h-[85px] md:h-auto rounded-[50%] w-[85px]"
-                  src="images/img_profileimglarg.png"
-                  alt="ProfileImgLarg One"
-                />
+                <h2>Image Here</h2>
               </div>
               <Text className="font-semibold text-blue_gray-900 text-lg">
                 {" "}
