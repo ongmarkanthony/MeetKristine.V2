@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import './index.css'
+import MainLayout from './layouts/MainLayout.jsx';
+import UserDashboard from './views/UserDashboard.jsx';
+import { createRoot } from 'react-dom';  // Notice the lowercase 'c' in createRoot
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+      <MainLayout>
+        <UserDashboard />
+      </MainLayout>
+  </React.StrictMode>
 );
