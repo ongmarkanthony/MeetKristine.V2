@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import UserDashboard from "./pages/userDashboardPage";
 import CreateProfile from "./pages/CreateProfile";
 import AdminDashboard from "./pages/AdminDashboard";
+import Management from "./pages/Management";
 
 function App() {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -29,6 +30,7 @@ function App() {
           }
         />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/employee-management" element={<Management />} />
         {/* <Route
           path="/adminDashboard"
           element={
