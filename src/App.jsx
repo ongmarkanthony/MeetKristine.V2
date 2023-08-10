@@ -1,3 +1,11 @@
+
+import React, { useState } from "react";
+import LoginPage from "./pages/loginPage";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import UserDashboard from "./pages/userDashboardPage";
+import CreateProfile from "./pages/CreateProfile";
+import AdminDashboard from "./pages/AdminDashboard";
+import Management from "./pages/Management";
 import React, { useState } from 'react';
 import LoginPage from "../pages/LoginPage"
 import { BrowserRouter as  Route, Routes, } from 'react-router-dom';
@@ -7,6 +15,9 @@ import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "../components/Documents";
 import BundyClock from './pages/bundyClock';
+
+function App() {
+  const [loggedInUserRole, setLoggedInUserRole] = useState("");
 
 
 const App = () => {
