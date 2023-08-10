@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import LoginPage from "./pages/loginPage";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -5,45 +6,34 @@ import UserDashboard from "./pages/userDashboardPage";
 import CreateProfile from "./pages/CreateProfile";
 import AdminDashboard from "./pages/AdminDashboard";
 import Management from "./pages/Management";
+import React, { useState } from 'react';
+import LoginPage from "../pages/LoginPage"
+import { BrowserRouter as  Route, Routes, } from 'react-router-dom';
+import "./index.css";
+import UserDashboardPages from "./pages/userDashboardPages";
+import UserProfile from "./pages/UserProfile";
+import TimeOff from "./pages/TimeOff";
+import Documents from "../components/Documents";
+import BundyClock from './pages/bundyClock';
 
 function App() {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
 
-  const handleLogin = (userRole) => {
-    setLoggedInUserRole(userRole);
-  };
+
+const App = () => {
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage handleLogin={handleLogin} />} />
-        <Route
-          path="/userDashboard"
-          element={
-            loggedInUserRole === "user" ? (
-              <UserDashboard>
-                <CreateProfile />
-              </UserDashboard>
-            ) : (
-              <Link to="/.pages/userDashboardPage">User Dashboard</Link>
-            )
-          }
-        />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/employee-management" element={<Management />} />
-        {/* <Route
-          path="/adminDashboard"
-          element={
-            loggedInUserRole === 'admin' ? (
-              <AdminDashboard />
-            ) : (
-              <Link to="/adminDashboard">Admin Dashboard</Link>
-            )
-          }
-        /> */}
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/UserDashboardPages" element={<UserDashboardPages />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="/BundyClock" element={<BundyClock />} />
+        <Route path="/TimeOff" element={<TimeOff />} />
+        <Route path="/Document" element={<Documents />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
