@@ -8,7 +8,7 @@ import "./index.css";
 import UserDashboardPages from "./pages/userDashboardPages";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
-import Documents from "../components/Documents";
+import Documents from "./pages/Documents";
 import BundyClock from './pages/bundyClock';
 
 
