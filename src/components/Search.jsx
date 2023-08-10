@@ -1,8 +1,8 @@
 import { Input } from "postcss";
-import React from "react";
+import React, { useState } from "react";
 
 const Search = () => {
-  const [inputfieldvalue, setInputfieldvalue] = React.useState("");
+  const [inputfieldvalue, setInputfieldvalue] = useState("");
   return (
     <Input
       name="InputField"
