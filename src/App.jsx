@@ -3,10 +3,10 @@ import LoginPage from "../components/LoginPage"
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import "./index.css";
 import UserDashboard from "./components/userDashboard";
-import UserProfile from "./components/UserProfile";
-import TimeOff from "./components/TimeOff";
+import UserProfile from "./pages/UserProfile";
+import TimeOff from "./pages/TimeOff";
 import Documents from "../components/Documents";
-import BundyClock from './components/bundyClock';
+import BundyClock from './pages/bundyClock';
 
 
 const App = () => {
