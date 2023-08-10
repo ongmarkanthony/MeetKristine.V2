@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import UserHeader from '../components/UserHeader';
 
-function UserProfile() {
+const UserProfile= () =>{
     const formik=useFormik({
         initialValues: {
             email:'',
