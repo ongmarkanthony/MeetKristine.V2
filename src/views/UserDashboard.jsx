@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import UserHeader from '../components/Layout/Layout/UserHeader';
+import UserFooter from '../components/Layout/Layout/UserFooter';
 
 const UserDashboard = () => {
   const [holidays, setHolidays] = useState([]);
@@ -17,6 +19,8 @@ const UserDashboard = () => {
     fetchHolidays  }, []);
 
   return (
+    <>
+    <UserHeader />
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4 text-center">
@@ -86,6 +90,8 @@ const UserDashboard = () => {
               </div>
             </div>
     </section>
+    <UserFooter />;
+  </>
   );
 };
 export default UserDashboard

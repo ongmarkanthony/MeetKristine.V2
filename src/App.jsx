@@ -1,6 +1,6 @@
 import React, {} from 'react';
 import LoginPage from "./pages/loginPage"
-import yourPage from "./pages/yourProfile"
+import yourPage from "./UserDashboard/yourProfile"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserDashboard from './views/UserDashboard';
 import UserDashboardLayout from './layouts/UserDashboardLayout';
