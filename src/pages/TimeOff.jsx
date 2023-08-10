@@ -1,8 +1,12 @@
 import React from 'react'
+import UserHeader from '../components/UserHeader'
 
 const TimeOff = () => {
   return (
-    <div>T</div>
+    <>
+    <UserHeader />
+    <div>TIME OFF</div>
+    </>
   )
 }
 

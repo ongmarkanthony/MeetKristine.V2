@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import UserHeader from '../components/UserHeader';
 
 const BundyClock = () => {
   const [time, setTime]=useState("");
@@ -45,6 +46,8 @@ const BundyClock = () => {
 };
 
   return (
+    <>
+    <UserHeader />
     <div className="text-center">
     <h1 className="text-4xl font-bold mb-4">{time}</h1>
     <p className="text-2xl">{date}</p>
@@ -65,5 +68,6 @@ const BundyClock = () => {
     {timeIn && <p className="text-green-500 mt-2">Time In: {timeIn}</p>}
     {timeOut && <p className="text-red-500 mt-2">Time Out: {timeOut}</p>}
   </div>
+  </>
 );
 export default BundyClock

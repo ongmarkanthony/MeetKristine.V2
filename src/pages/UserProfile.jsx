@@ -1,5 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import UserHeader from '../components/UserHeader';
 
 function UserProfile() {
     const formik=useFormik({
@@ -54,6 +56,8 @@ function UserProfile() {
     },
 });
   return (
+    <>
+    <UserHeader />
     <section className=" py-1 bg-blueGray-50">
     <div className="w-full lg:w-8/12 px-4 mx-auto mt-6">
         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -307,6 +311,7 @@ function UserProfile() {
     </div>
     </div>
 </section>
+</>
 );
 }
 

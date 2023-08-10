@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import UserHeader from './UserHeader';
-import UserFooter from './UserFooter';
+import UserHeader from '../components/UserHeader';
+import UserFooter from '../components/UserFooter';
 
 const UserDashboard = () => {
   const [holidays, setHolidays] = useState([]);

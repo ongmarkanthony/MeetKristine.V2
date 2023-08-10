@@ -1,8 +1,12 @@
 import React from 'react'
+import UserHeader from '../components/UserHeader';
 
 const Documents = () => {
   return (
-    <div>D</div>
+    <>
+    <UserHeader />
+    <div>DOCUMENTS</div>
+    </>
   )
 }
 
