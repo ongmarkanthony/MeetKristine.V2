@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const bundyClock = () => {
+const BundyClock = () => {
   const [time, setTime]=useState("");
   const [date, setDate]=useState("");
   const [timeIn, setTimeIn]=useState("");
@@ -66,4 +66,4 @@ const bundyClock = () => {
     {timeOut && <p className="text-red-500 mt-2">Time Out: {timeOut}</p>}
   </div>
 );
-export default bundyClock
+export default BundyClock

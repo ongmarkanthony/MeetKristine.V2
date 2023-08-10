@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 
-function YourProfile() {
+function UserProfile() {
     const formik=useFormik({
         initialValues: {
             email:'',
@@ -310,4 +310,4 @@ function YourProfile() {
 );
 }
 
-export default YourProfile;
+export default UserProfile;
