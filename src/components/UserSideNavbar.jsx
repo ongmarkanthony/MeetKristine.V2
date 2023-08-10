@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserSideNavbar = () => {
+const UserNavbar = () => {
   return (
     <div className= "bg-blue-500 h-screen w-64 flex flex-col py-8">
         <div className= "text-white text-xl font-semibold px-6 mb-8">Welcome User</div>
@@ -15,4 +15,4 @@ const UserSideNavbar = () => {
   )
 }
 
-export default UserSideNavbar
+export default UserNavbar
