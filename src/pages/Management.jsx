@@ -1,5 +1,6 @@
 import React from "react";
 import CardContainer from "../components/CardContainer";
+import ManagementHeader from "../components/ManagementHeader";
 
 const Management = () => {
   return (
@@ -9,6 +10,7 @@ const Management = () => {
           Candidate Management
         </p>
         <div>
+          <ManagementHeader />
           <CardContainer />
         </div>
       </div>

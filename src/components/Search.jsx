@@ -1,7 +1,7 @@
 import { Input } from "postcss";
 import React, { useState } from "react";
 
-const Search = () => {
+const SearchInput = () => {
   const [inputfieldvalue, setInputfieldvalue] = useState("");
   return (
     <Input
@@ -35,4 +35,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchInput;

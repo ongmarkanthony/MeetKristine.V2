@@ -1,11 +1,11 @@
-import Sidebar from "../components/Sidebar";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import AdminSidebar from "../components/AdminSidebar";
 
 const AdminDashboard = () => {
   return (
     <div className="bg-gray-50_02 flex sm:flex-col md:flex-col flex-row font-gilroy gap-30px items-start mx-auto sm:pr-5 pr-6 w-full">
-      <Sidebar />
+      <AdminSidebar />
       <div className="flex-1 sm:h-[1056px] h-[1109px] md:h-[1965px] md:m,t-0 mt-6 md:px-5 relative w-full">
         <div className="absolute flex flex-col gap-[31px] inset-x-[0] items-center justify-start mx-auto top-[1%] w-full">
           <div className="flex flex-row md:gap-10 items-center justify-between w-full">

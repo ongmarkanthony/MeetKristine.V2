@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-
-const Sidebar = () => {
+import { Sidebar } from "react-pro-sidebar";
+const AdminSidebar = () => {
   return (
-    <div className="!sticky !w-[300px] flex h-screen md:hidden justify-start overflow-auto md:px-5 top-0">
+    <Sidebar className="!sticky !w-[300px] flex h-screen md:hidden justify-start overflow-auto md:px-5 top-0">
       <div className="bg-gray-50_01 flex flex-col gap-35px items-center justify-start p-6 sm:px-5 w-full">
         <h2>Image here</h2>
         <div className="flex flex-col md:gap-10 gap-441px items-center justify-start mb-2 w-full">
@@ -98,8 +98,8 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Sidebar>
   );
 };
 
-export default Sidebar;
+export default AdminSidebar;
