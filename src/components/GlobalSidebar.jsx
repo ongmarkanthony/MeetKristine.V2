@@ -18,7 +18,7 @@ const GlobalSidebar = () => {
   };
 
   return (
-    <div className="w-64 max-h-screen bg-white p-4 shadow-lg">
+    <div className="w-full sm:w-64 bg-white p-4 shadow-lg flex-shrink-0">
       <div className="bg-white text-white shadow w-full p-2 flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex items-center">

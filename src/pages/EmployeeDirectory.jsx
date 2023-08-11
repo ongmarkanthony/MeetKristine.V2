@@ -7,11 +7,11 @@ const EmployeeDirectory = () => {
   return (
     //CONVERT TO CARD
     <>
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex flex-col min-h-screen justify-between bg-gray-100">
+        <div className="flex flex-col sm:flex-row flex-grow">
         <GlobalSidebar />
         <DirectoryContent />
-      </div>
-      <div>
+        </div>
         <UserFooter />
       </div>
     </>
