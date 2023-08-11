@@ -9,7 +9,7 @@ const ManagementHeader = () => {
         <div className="bg-white-A700 flex flex-row items-center justify-center p-6 sm:px-5 shadow-bs w-full">
           <div className="flex md:flex-col flex-row md:gap-5 items-center justify-center w-90%">
             <img src="..." alt="Group" className="h-35px w-13%" />
-            <Input
+            {/* <Input
               name="InputField"
               placeholder="Search"
               value={inputfieldvalue}
@@ -37,7 +37,7 @@ const ManagementHeader = () => {
                   viewBox="0 0 20 20"
                 />
               }
-            />
+            /> */}
             <div className="flex sm:flex-col flex-row sm:gap-5 items-start justify-center md:ml-[0] ml-50px w-33% md:w-full">
               <div className="flex flex-row gap-19px items-center justify-between pl-5px py-5px w-27@ sm:w-full">
                 <h4 className="font-medium ml-9px text-base text-gray-900_01">

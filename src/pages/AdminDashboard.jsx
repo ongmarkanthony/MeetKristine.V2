@@ -9,17 +9,17 @@ const AdminDashboard = () => {
       <div className="flex-1 sm:h-[1056px] h-[1109px] md:h-[1965px] md:m,t-0 mt-6 md:px-5 relative w-full">
         <div className="absolute flex flex-col gap-[31px] inset-x-[0] items-center justify-start mx-auto top-[1%] w-full">
           <div className="flex flex-row md:gap-10 items-center justify-between w-full">
-            <text className="font-semibold sm:text-2xl md:texxt-[26px] text-[28px] text-blue_gray-900">
+            <p className="font-semibold sm:text-2xl md:texxt-[26px] text-[28px] text-blue_gray-900">
               Dashboard
-            </text>
+            </p>
             <div className="flex flex-row font-opensans gap-6 items-center justify-between w-[13%]">
               <div className="bg-white-A700 border border-blue_gray-100 border-solid flex flex-col h-14 items-end justify-start p-2 rounded-[50%] w-14">
                 <div className="md:h-9 h-[35px] mb-1 relative w-9">
                   <h2>Image Here</h2>
                   <div className="absolute bg-red-700 border border-blue_gray-50 border-solid flex flex-col h-[18px] items-start justify-start p-0.5 right-[0] rounded-[50%] top-[0] w-[18px]">
-                    <text className="font-semibold mb-0.5 ml-0.5 md:ml-[0] text-white-A700 text-xs">
+                    <p className="font-semibold mb-0.5 ml-0.5 md:ml-[0] text-white-A700 text-xs">
                       2
-                    </text>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -55,16 +55,16 @@ const AdminDashboard = () => {
                           }}
                         ></CircularProgressbar>
                       </div>
-                      <text className="absolute font-semibold h-max inset-[0] justify-center m-auto text-4xl sm:text-[32px] md:text-[34px] text-blue_gray-900 w-max">
+                      <p className="absolute font-semibold h-max inset-[0] justify-center m-auto text-4xl sm:text-[32px] md:text-[34px] text-blue_gray-900 w-max">
                         80%
-                      </text>
+                      </p>
                     </div>
-                    <text className="font-semibold text-2xl md:text-[22px] text-blue-A700_01 sm:text-xl">
+                    <p className="font-semibold text-2xl md:text-[22px] text-blue-A700_01 sm:text-xl">
                       Overall
-                    </text>
-                    <text className="text-base text-blue_gray-400">
+                    </p>
+                    <p className="text-base text-blue_gray-400">
                       Actively liberal
-                    </text>
+                    </p>
                   </div>
                 </div>
                 <div
@@ -97,13 +97,13 @@ const AdminDashboard = () => {
                             }}
                           ></CircularProgressbar>
                         </div>
-                        <text className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
+                        <p className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
                           90%
-                        </text>
+                        </p>
                       </div>
-                      <text className="font-medium text-blue_gray-400 text-xs">
+                      <p className="font-medium text-blue_gray-400 text-xs">
                         Passively Income
-                      </text>
+                      </p>
                     </div>
                   </div>
                   <div
@@ -132,13 +132,13 @@ const AdminDashboard = () => {
                             }}
                           ></CircularProgressbar>
                         </div>
-                        <text className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
+                        <p className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
                           75%
-                        </text>
+                        </p>
                       </div>
-                      <text className="font-medium text-blue_gray-400 text-xs">
+                      <p className="font-medium text-blue_gray-400 text-xs">
                         Passively Savings
-                      </text>
+                      </p>
                     </div>
                   </div>
                   <div
@@ -167,13 +167,13 @@ const AdminDashboard = () => {
                             }}
                           ></CircularProgressbar>
                         </div>
-                        <text className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
+                        <p className="absolute font-semibold h-max inset-[0] justify-center m-auto text-base text-gray-900_02 w-max">
                           50%
-                        </text>
+                        </p>
                       </div>
-                      <text className="font-medium text-blue_gray-400 text-xs">
+                      <p className="font-medium text-blue_gray-400 text-xs">
                         Passivelyy Expense
-                      </text>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -184,15 +184,15 @@ const AdminDashboard = () => {
                   <div className="absolute flex flex-col gap-11 items-start justify-start left-[0] pt-0.5 top-[0] w-[77%]">
                     <div className="flex flex-row items-end justify-startw-1/4 md:w-full">
                       <h2>Image Here</h2>
-                      <text className="font-medium ml-[5px] mt-[5px] text-black-900 text-lg">
+                      <p className="font-medium ml-[5px] mt-[5px] text-black-900 text-lg">
                         Tip
-                      </text>
+                      </p>
                     </div>
                     <div className="flex flex-col gap-4 items-start justify-start rounded-md w-full">
-                      <text className="font-medium leading-[26.00px] text-base text-blue_gray-400 w-full">
+                      <p className="font-medium leading-[26.00px] text-base text-blue_gray-400 w-full">
                         Openinga new edit account can sometimes lower your score
                         {""}
-                      </text>
+                      </p>
                       <button className="bg-blue-A700_01 cursor-pointer font-medium py-2.5 rounded-md text-center texxt-sm text-white-A700 w-[119px]">
                         {" "}
                         Learn More
@@ -207,12 +207,12 @@ const AdminDashboard = () => {
                 <div className="flex flex-col gap-[21px] items-center justify-start mt-[3px] w-full">
                   <div className="flex flex-row sm:gap-10 items-start justify-between w-full">
                     <div className="flex flex-col gap-[7px] items-start justify-start mt-[7px] w-[32%]">
-                      <text className="font-semibold text-blue_gray-900 text-lg">
+                      <p className="font-semibold text-blue_gray-900 text-lg">
                         Spend Analysis
-                      </text>
+                      </p>
                       <div className="flex flex-row items-start justify-evenly w-full">
                         <h2>Image Here</h2>
-                        <text className="mt-0.5 text-black-900 text-sm">
+                        <p className="mt-0.5 text-black-900 text-sm">
                           <span className="text-colors font-gilroy text-left font-normal">
                             88%
                           </span>
@@ -220,13 +220,13 @@ const AdminDashboard = () => {
                             {""}
                             Compare to last week
                           </span>
-                        </text>
+                        </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-[13px] items-center justify-between w-[17%]">
-                      <text className="font-semibold ml-[3px] text-blue_gray-600 text-sm">
+                      <p className="font-semibold ml-[3px] text-blue_gray-600 text-sm">
                         This Week
-                      </text>
+                      </p>
                       <h2>Image Here</h2>
                     </div>
                   </div>
@@ -234,24 +234,24 @@ const AdminDashboard = () => {
                     <div className="flex flex-col gap-[18px] items-end justify-start w-full">
                       <div className="flex md:flex-col flex-row gap-[7px] items-center justify-between w-full">
                         <div className="flex flex-col gap-[26px] items-start justify-start">
-                          <text className="text-blue_gray-900 text-sm">
+                          <p className="text-blue_gray-900 text-sm">
                             25k
-                          </text>
-                          <text className="text-blue_gray-900 text-sm">
+                          </p>
+                          <p className="text-blue_gray-900 text-sm">
                             20k
-                          </text>
-                          <text className="md:ml-[0] ml-[3px] text-blue_gray-900 text-sm">
+                          </p>
+                          <p className="md:ml-[0] ml-[3px] text-blue_gray-900 text-sm">
                             15k
-                          </text>
-                          <text className="ml-0.5 md:ml-[0] text-blue_gray-900 text-sm">
+                          </p>
+                          <p className="ml-0.5 md:ml-[0] text-blue_gray-900 text-sm">
                             10k
-                          </text>
-                          <text className="ml-2 md:ml-[0] text-blue_gray-900 text-sm">
+                          </p>
+                          <p className="ml-2 md:ml-[0] text-blue_gray-900 text-sm">
                             5k
-                          </text>
-                          <text className="md:ml-[0] ml-[7px] text-blue_gray-900 text-sm">
+                          </p>
+                          <p className="md:ml-[0] ml-[7px] text-blue_gray-900 text-sm">
                             0k
-                          </text>
+                          </p>
                         </div>
                         <div
                           className="bg-cover bg-no-repeat flex md:flex-1 flex-col h-[200px] items-end justify-start p-[26px] sm:px-5 w-[96%] md:w-full"
@@ -261,36 +261,36 @@ const AdminDashboard = () => {
                         >
                           <div className="flex flex-col items-center justify-start mb-[78px] mr-[136px] w-auto">
                             <div className="bg-black-900_01 flex flex-col items-center justify-center px-[11px] py-2.5 rounded-[5px] w-auto">
-                              <text className="font-medium text-white-A700 text-xs w-auto">
+                              <p className="font-medium text-white-A700 text-xs w-auto">
                                 <>
                                   $2311.65 <br /> 5 May
                                 </>
-                              </text>
+                              </p>
                             </div>
                             <h2>Image Here</h2>
                           </div>
                         </div>
                       </div>
                       <div className="flex md:flex-col flex-row md:gap-5 items-center justify-end w-[96%] md:w-full">
-                        <text className="text-blue_gray-900 text-sm">Mon</text>
-                        <text className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
+                        <p className="text-blue_gray-900 text-sm">Mon</p>
+                        <p className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
                           Tue
-                        </text>
-                        <text className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
+                        </p>
+                        <p className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
                           Wed
-                        </text>
-                        <text className="md:ml-[0] ml-[71px] text-blue_gray-900 text-sm">
+                        </p>
+                        <p className="md:ml-[0] ml-[71px] text-blue_gray-900 text-sm">
                           Thu
-                        </text>
-                        <text className="md:ml-[0] ml-[73px] text-blue_gray-900 text-sm">
+                        </p>
+                        <p className="md:ml-[0] ml-[73px] text-blue_gray-900 text-sm">
                           Fri
-                        </text>
-                        <text className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
+                        </p>
+                        <p className="md:ml-[0] ml-[74px] text-blue_gray-900 text-sm">
                           Sat
-                        </text>
-                        <text className="md:ml-[0] ml-[70px] text-blue_gray-900 text-sm">
+                        </p>
+                        <p className="md:ml-[0] ml-[70px] text-blue_gray-900 text-sm">
                           Sun
-                        </text>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -299,13 +299,13 @@ const AdminDashboard = () => {
               <div className="bg-white-A700 border border-blue_gray-100 border-solid flex md:flex-1 flex-col items-center justify-end p-[21px] sm:px-5 rounded-lg w-[35%] md:w-full">
                 <div className="flex flex-col items-center justify-start mt-[3px] w-[99%] md:w-full">
                   <div className="flex flex-row items-start justify-between w-full">
-                    <text className="font-semibold mt-[5px] text-base text-blue_gray-900">
+                    <p className="font-semibold mt-[5px] text-base text-blue_gray-900">
                       Expense Tracking
-                    </text>
+                    </p>
                     <div className="flex flex-row gap-2 items-center justify-between mb-[5px] w-[31%]">
-                      <text className="font-semibold text-blue_gray-600 text-sm">
+                      <p className="font-semibold text-blue_gray-600 text-sm">
                         This Month
-                      </text>
+                      </p>
                       <h2>Image Here</h2>
                     </div>
                   </div>
@@ -315,20 +315,20 @@ const AdminDashboard = () => {
                   >
                     <div className="flex flex-row gap-[47px] items-start justify-start mb-0.5 mt-[13px] w-[905%] md:w-full">
                       <div className="flex flex-col md:gap-10 gap-[63px] justify-start mt-[18px]">
-                        <text className="font-semibold mr-2 text-base text-white-A700">
+                        <p className="font-semibold mr-2 text-base text-white-A700">
                           28%
-                        </text>
-                        <text className="font-semibold ml-2.5 md:ml-[0] text-base text-white-A700">
+                        </p>
+                        <p className="font-semibold ml-2.5 md:ml-[0] text-base text-white-A700">
                           12%
-                        </text>
+                        </p>
                       </div>
                       <div className="flex flex-col md:gap-10 gap-[63px] items-start justify-start mb-[18px]">
-                        <text className="font-semibold text-base text-white-A700">
+                        <p className="font-semibold text-base text-white-A700">
                           24%
-                        </text>
-                        <text className="font-semibold md:ml-[0] ml-[3px] text-base text-white-A700">
+                        </p>
+                        <p className="font-semibold md:ml-[0] ml-[3px] text-base text-white-A700">
                           36%
-                        </text>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -337,29 +337,29 @@ const AdminDashboard = () => {
                       <div className="flex flex-row items-start justify-between w-[95%] md:w-full">
                         <div className="flex flex-row gap-2 items-center justify-start w-1/4">
                           <div className="bg-blue-900 h-2 my-0.5 rounded-sm w-[31%]"></div>
-                          <text className="font-semibold text-blue_gray-900 text-sm">
+                          <p className="font-semibold text-blue_gray-900 text-sm">
                             Travel
-                          </text>
+                          </p>
                         </div>
                         <div className="flex flex-row gap-2 items-start justify-start w-[26%]">
                           <div className="bg-blue-800 h-2 mb-[7px] rounded-sm w-[30%]"></div>
-                          <text className="font-semibold text-blue_gray-900 text-sm">
+                          <p className="font-semibold text-blue_gray-900 text-sm">
                             Sports
-                          </text>
+                          </p>
                         </div>
                       </div>
                       <div className="flex flex-row items-start justify-between w-full">
                         <div className="flex flex-row gap-2 items-start justify-start w-[32%]">
                           <div className="bg-blue-A700_01 h-2 mb-[7px] rounded-sm w-[23%]"></div>
-                          <text className="font-semibold text-blue_gray-900 text-sm">
+                          <p className="font-semibold text-blue_gray-900 text-sm">
                             Shopping
-                          </text>
+                          </p>
                         </div>
                         <div className="flex flex-row gap- items-center justify-start w-[31%]">
                           <div className="bg-blue-A200 h-2 my-0.5 rounded-sm w-[24%]"></div>
-                          <text className="font-semibold text-blue_gray-900 text-sm">
+                          <p className="font-semibold text-blue_gray-900 text-sm">
                             Medicine
-                          </text>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -373,9 +373,9 @@ const AdminDashboard = () => {
           <div className="bg-gray-50_01 h-[1056px] mx-auto shadow-bs w-full"></div>
           <div className="absolute flex flex-row inset-x-[0] items-start justify-between mx-auto top-[0] w-full">
             <h2>Image Here</h2>
-            <text className="font-semibold mt-1 text-blue_gray-900 text-lg">
+            <p className="font-semibold mt-1 text-blue_gray-900 text-lg">
               My Profile
-            </text>
+            </p>
             <h2>Image Here</h2>
           </div>
           <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto pb-[5px] top-[6%] w-[45%]">
@@ -383,31 +383,31 @@ const AdminDashboard = () => {
               <div className="border-[1.79px] bprder-blue-A700 border-solid flex flex-col h-[100px] items-center justify-start p-[7px] rounded-[50%] w-[100px]">
                 <h2>Image Here</h2>
               </div>
-              <text className="font-semibold text-blue_gray-900 text-lg">
+              <p className="font-semibold text-blue_gray-900 text-lg">
                 {" "}
                 Michelle Rock
-              </text>
+              </p>
             </div>
           </div>
           <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[21%] w-full">
             <div className="flex flex-col gap-[13px] items-center justify-start pt-1 w-full">
               <div className="flex flex-col gap-[19px] items-start justify-start pb-[5px] pr-[5px] w-full">
-                <text className="text-base text-blue_gray-400">
+                <p className="text-base text-blue_gray-400">
                   Mobile number{" "}
-                </text>
+                </p>
                 <div className="flex flex-col items-center justify-start">
-                  <text className="font-medium text-base text-blue_gray-900">
+                  <p className="font-medium text-base text-blue_gray-900">
                     {" "}
                     555-0111
-                  </text>
+                  </p>
                 </div>
               </div>
               <div className="flex flex-col gap-[19px] items-start justify-start w-full">
-                <text className="text-base text-blue_gray-400">Email</text>
+                <p className="text-base text-blue_gray-400">Email</p>
                 <div className="flex flex-col items-center justify-start">
-                  <text className="font-medium text-base text-blue_gray-900">
+                  <p className="font-medium text-base text-blue_gray-900">
                     Michellerock@gmail.com
-                  </text>
+                  </p>
                 </div>
               </div>
             </div>
