@@ -62,12 +62,14 @@ const UserProfile = () => {
   return (
     <>
     <div className="flex h-screen bg-gray-100">
-    <GlobalSidebar />
-    <div className="flex flex-col h-screen bg-white p-4 shadow-lg">
-    <ProfileInfoForm formik={formik} />
-    <AddressInfoForm formik={formik} />
-    <OtherInfoForm formik={formik} />
-    </div>
+      <div className="w-full sm:w-64 flex-shrink-0">
+        <GlobalSidebar />
+      </div>
+      <div className="flex flex-col h-screen bg-white p-4 shadow-lg w-full overflow-auto">
+      <ProfileInfoForm formik={formik} />
+      <AddressInfoForm formik={formik} />
+      <OtherInfoForm formik={formik} />
+      </div>
     </div>
       {/* <UserFooter /> */}
     </>
