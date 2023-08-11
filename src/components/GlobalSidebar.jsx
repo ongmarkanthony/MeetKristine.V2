@@ -18,7 +18,7 @@ const GlobalSidebar = () => {
   };
 
   return (
-    <div className="w-64 h-screen bg-white p-4 shadow-lg">
+    <div className="w-64 max-h-screen bg-white p-4 shadow-lg">
       <div className="bg-white text-white shadow w-full p-2 flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex items-center">
@@ -93,11 +93,6 @@ const GlobalSidebar = () => {
           >
             <i className="fas fa-sign-out-alt mr-2"></i>Close
           </a>
-
-          <div className="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mt-2"></div>
-          <p className="mb-1 px-5 py-3 text-left text-xs text-cyan-500">
-            Copyright MeetKristine@2023
-          </p>
         </div>
       </div>
     </div>
