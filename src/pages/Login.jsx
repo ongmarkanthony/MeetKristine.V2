@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { authenticateUser } from "../utils/userAuth";
+import { resetPassword } from "../utils/resetPass";
 
-const LoginPage = () => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userRole, setUserRole] = useState("");
@@ -25,11 +26,24 @@ const LoginPage = () => {
     }
   };
 
+  // const resetPassword = (username)=>{
+  //   resetPassword(username);
+  // }
+
+  // const user = users.find(user => user.username === username && user.password === password);
+
+  // if (user) {
+  //   user.password == password;
+  // }
+
+  // return null;
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin();
+  
   };
-
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -45,16 +59,16 @@ const LoginPage = () => {
                   <input
                     autoComplete="off"
                     id="email"
-                    name="email"
+                    name="username"
                     type="text"
                     className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
-                    placeholder="Email address"
+                    placeholder="Username"
                   />
                   <label
-                    htmlFor="email"
+                    htmlFor="username"
                     className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
-                    Email Address
+                    Username
                   </label>
                 </div>
                 <div className="relative">
@@ -78,6 +92,11 @@ const LoginPage = () => {
                     Submit
                   </button>
                 </div>
+                {/* <div className="relative">
+                  <a onClick={handleForgotPassword} className="text-blue-500">
+                    Forgot Password
+                  </a>
+                </div> */}
               </div>
             </div>
           </div>
@@ -87,4 +106,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
