@@ -8,12 +8,8 @@ import UserDashboardPages from "./pages/UserDashboardPage";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "./pages/Documents";
-<<<<<<< HEAD
-import BundyClock from "./pages/BundyClock";
-=======
 import BundyClock from './pages/bundyClock';
 
->>>>>>> 79cc6c59390535015a4f79fefd51f7c06243f289
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
