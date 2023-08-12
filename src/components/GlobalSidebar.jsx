@@ -3,6 +3,7 @@ import { Doughnut } from "react-chartjs-2"; //Install react-chartjs-2 using yarn
 import "chart.js/auto";
 
 import React from "react";
+import ProfilePhoto from "./ProfilePhoto";
 
 const GlobalSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -43,6 +44,7 @@ const GlobalSidebar = () => {
       </div>
 
       <div className="flex-1 flex flex-wrap">
+        <ProfilePhoto />
         <div
           className={`p-2 bg-white w-full md:w-60 flex flex-col ${
             showSideNav ? "" : "md:flex hidden"

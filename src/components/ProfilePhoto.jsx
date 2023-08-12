@@ -22,6 +22,7 @@ const ProfilePhoto = () => {
         <div>
           {imagePreview && (
             <div className='mb-4'>
+              {/* <img class="rounded-full w-96 h-96" src="/docs/images/examples/image-4@2x.jpg" alt="image description"></img> */}
               <img src={imagePreview} alt='Profile' className='h-40 w-40 object-cover rounded-full' />
             </div>
           )}
