@@ -27,19 +27,19 @@ const AddressInfoForm = () => {
       </div>
     </div>
     <div className="-mx-3 md:flex mb-6">
-      <div className="md:w-1/3 px-3">
+      <div className="md:w-1/4 px-3">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-city">
           City
         </label>
         <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-city" type="text" placeholder="City" value={city} onChange={e => setCity(e.target.value)} />
       </div>
-      <div className="md:w-1/3 px-3">
+      <div className="md:w-1/4 px-3">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-country">
           Country
         </label>
         <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-country" type="text" placeholder="Country" value={country} onChange={e => setCountry(e.target.value)} />
       </div>
-      <div className="md:w-1/3 px-3">
+      <div className="md:w-1/4 px-3">
         <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-postal-code">
           Postal Code
         </label>

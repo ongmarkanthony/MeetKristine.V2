@@ -6,44 +6,28 @@ import { resetPassword } from "../utils/resetPass";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [userRole, setUserRole] = useState("");
-  const navigateTo = useNavigate();
 
-  const handleLogin = () => {
-    const role = authenticateUser(username, password);
-    setUserRole(role);
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("", {
+        method : "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }, 
+        body : JSON.stringify({ username,password})
+        });
 
-    switch (role) {
-      case "User":
-        navigateTo("/userDashboard");
-        break;
-      case "Manager":
-      case "Admin":
-        navigateTo("/adminDashboard");
-        break;
-      default:
-        break;
+        if (response.ok) {
+          const user = await response.json();
+          authenticateUser(user);
+        } else {
+          alert("Invalid Credentials");
+        }
+    } catch (error) {
+      console.error(error);
     }
   };
 
-  // const resetPassword = (username)=>{
-  //   resetPassword(username);
-  // }
-
-  // const user = users.find(user => user.username === username && user.password === password);
-
-  // if (user) {
-  //   user.password == password;
-  // }
-
-  // return null;
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleLogin();
-  
-  };
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -92,11 +76,6 @@ const Login = () => {
                     Submit
                   </button>
                 </div>
-                {/* <div className="relative">
-                  <a onClick={handleForgotPassword} className="text-blue-500">
-                    Forgot Password
-                  </a>
-                </div> */}
               </div>
             </div>
           </div>

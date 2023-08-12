@@ -5,7 +5,7 @@ import ProfileInfoForm from "../components/ProfileInfoForm";
 import AddressInfoForm from "../components/AddressInfoForm";
 import OtherInfoForm from "../components/OtherInfoForm";
 import GlobalSidebar from "../components/GlobalSidebar";
-// import UserFooter from "../components/UserFooter";
+import UserFooter from "../components/UserFooter";
 
 const UserProfile = () => {
   const formik = useFormik({
@@ -71,7 +71,7 @@ const UserProfile = () => {
       <OtherInfoForm formik={formik} />
       </div>
     </div>
-      {/* <UserFooter /> */}
+      <UserFooter /> 
     </>
   );
 };
