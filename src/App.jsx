@@ -8,10 +8,10 @@ import UserDashboardPages from "./pages/UserDashboardPage";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "./pages/Documents";
-import BundyClock from './pages/bundyClock';
+import BundyClock from "./pages/bundyClock";
 import ReportDashBoard from "./pages/ReportDashBoard";
 import EmployeeDirectory from "./pages/EmployeeDirectory";
-
+import ProfileInfoForm from "./components/ProfileInfoForm";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -28,7 +28,8 @@ const App = () => {
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/Management" element={<Management />} />
         <Route path="/ReportDashBoard" element={<ReportDashBoard />} />
-        <Route path="/EmployeeDirectory" element={<EmployeeDirectory/>}/>
+        <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
+        <Route path="/ProfileInfo" element={<ProfileInfoForm />} />
       </Routes>
     </BrowserRouter>
   );
