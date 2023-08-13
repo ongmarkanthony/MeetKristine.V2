@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { Doughnut } from "react-chartjs-2"; //Install react-chartjs-2 using yarn
-import { Link } from "react-router-dom";
 import "chart.js/auto";
-
 import React from "react";
 import ProfilePhoto from "./ProfilePhoto";
+import { Link } from "react-router-dom";
 
 const GlobalSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -44,17 +42,18 @@ const GlobalSidebar = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-wrap">
+      <div className="flex-1 flex-row justify-items-start">
         <ProfilePhoto />
+      </div>
         <div
           className={`p-2 bg-white w-full md:w-60 flex flex-col ${
             showSideNav ? "" : "md:flex hidden"
           }`}
         >
-          <nav>
+          <nav className= "flex-1 flex-row justify-items-start">
             <Link
               className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-              to="/ProfileInfo"
+              to="/UserProfile"
             >
               <i className="fas fa-home mr-2"></i>Profile
             </Link>
@@ -98,7 +97,6 @@ const GlobalSidebar = () => {
           </Link>
         </div>
       </div>
-    </div>
   );
 };
 

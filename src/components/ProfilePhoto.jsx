@@ -1,43 +1,43 @@
-import React from 'react'
-import { useState } from 'react'
+import { useState } from "react";
 
 const ProfilePhoto = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [profilePic, setProfilePic] = useState("avatar");
 
-  const onFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-    setImagePreview(URL.createObjectURL(event.target.files[0]));
-  };
-
-  const onFileUpload = () => {
-    const formData = new FormData();
-    formData.append("myFile", selectedFile, selectedFile.name);
-    console.log(selectedFile);
+  const handleChangePic = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const newPic = e.target.result;
+        setProfilePic(newPic);
+        // Logic to store the newPic in the backend database
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
-    <div className='max-w-md mx-auto bg-white p-5 rounded-md shadow-sm'>
-      <form>
-        <div>
-          {imagePreview && (
-            <div className='mb-4'>
-              {/* <img class="rounded-full w-96 h-96" src="/docs/images/examples/image-4@2x.jpg" alt="image description"></img> */}
-              <img src={imagePreview} alt='Profile' className='h-40 w-40 object-cover rounded-full' />
-            </div>
-          )}
-          <label className='block text-sm font-medium text-gray-700'>
-            Profile photo
-          </label>
-          <div className='mt-1 flex items-center'>
-            <input
-              type='file'
-              onChange={onFileChange}
-              className='focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
-            />
-          </div>
-        </div>
-      </form>
+    <div className=" justify-start grid">
+      <div className="bg-gray-200 p-8 rounded-lg shadow-lg">
+        <img
+          src={profilePic === "avatar" ? "/path/to/avatar.jpg" : profilePic}
+          alt="Profile Picture"
+          className="w-32 h-32 rounded-full mb-4"
+        />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleChangePic}
+          className="hidden"
+          id="profile-pic-input"
+        />
+        <label
+          htmlFor="profile-pic-input"
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg cursor-pointer"
+        >
+          Upload Picture
+        </label>
+      </div>
     </div>
   );
 };
