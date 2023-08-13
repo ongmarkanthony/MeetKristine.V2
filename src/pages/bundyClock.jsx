@@ -5,7 +5,7 @@ import timeTable from "../components/timeTable";
 
 const BundyClock = () => {
   const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useStatse("");
   const [timeIn, setTimeIn] = useState("");
   const [timeOut, setTimeOut] = useState("");
 
