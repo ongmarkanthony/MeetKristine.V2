@@ -52,23 +52,21 @@ const LeaveCredits = () => {
   }, [usedLeaves]);
 
   return (
-    <div className="p-4 border border-gray-300 rounded">
-      <p className="text-xl"> Welcome, {user ? user.name : "User"}</p>
-      <h1 className="text-2xl font-bold mb-4">Leave Credits</h1>
+    <div className="p-4 border border-gray-300 rounded md:p-8">
+      <p className="text-xl md:text-2xl"> Welcome, {user ? user.name : "User"}</p>
+      <h1 className="text-2xl font-bold mb-4 md:text-3xl ">Leave Credits</h1>
 
-      <p className="text-xl">
+      <p className="text-xl md:text-2xl">
         Current leave credits:
-        <ul className="list-disc pl-6">
+        <ul className="list-disc pl-6 md:pl-5">
           <li>
             Sick Leave: {leaveCredits.sickLeave} (Used: {usedLeaves.sickLeave})
           </li>
           <li>
-            Vacation Leave: {leaveCredits.vacationLeave} (Used:{" "}
-            {usedLeaves.vacationLeave})
+            Vacation Leave: {leaveCredits.vacationLeave} (Used: {usedLeaves.vacationLeave})
           </li>
           <li>
-            Personal Leave: {leaveCredits.personalLeave} (Used:{" "}
-            {usedLeaves.personalLeave})
+            Personal Leave: {leaveCredits.personalLeave} (Used: {usedLeaves.personalLeave})
           </li>
         </ul>
       </p>

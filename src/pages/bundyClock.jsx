@@ -1,8 +1,8 @@
 import React from 'react'
 import TimeTracker from '../components/TimeTracker'
-import TimeChart from '../components/TimeChart'
-import GlobalSidebar from '../components/GlobalSidebar'
+// import TimeChart from '../components/TimeChart'
 import UserFooter from '../components/UserFooter'
+import GlobalSidebar from '../components/GlobalSideBar'
 
 
 const bundyClock = () => {
@@ -12,7 +12,7 @@ const bundyClock = () => {
       <div className="flex flex-col sm:flex-row flex-grow">
       <GlobalSidebar />
       <TimeTracker/>
-      <TimeChart/>
+      {/* //<TimeChart/> */}
       </div>
       <UserFooter />
     </div>

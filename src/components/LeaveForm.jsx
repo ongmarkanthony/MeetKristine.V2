@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LeaveCredits from "./LeaveCredits";
 import Calendar from "./Calendar";
 
@@ -11,7 +11,7 @@ const LeaveForm = () => {
   const [documents, setDocuments] = useState([]);
   const [leaveDetails, setLeaveDetails] = useState([]);
   const [status, setStatus] = useState("PENDING");
-  const [numberOfDays, setNumberOfDays] = useState(0); // Add this state
+  const [numberOfDays, setNumberOfDays] = useState(0); 
 
   const handleLeaveTypeChange = (e) => {
     setLeaveType(e.target.value);
@@ -23,12 +23,12 @@ const LeaveForm = () => {
 
   const handleFromDateChange = (e) => {
     setFromDate(e.target.value);
-    calculateDays(e.target.value, toDate); // Call calculateDays
+    calculateDays(e.target.value, toDate);
   };
 
   const handleToDateChange = (e) => {
     setToDate(e.target.value);
-    calculateDays(fromDate, e.target.value); // Call calculateDays
+    calculateDays(fromDate, e.target.value);
   };
 
   const handleMessageChange = (e) => {
@@ -42,7 +42,7 @@ const LeaveForm = () => {
   const calculateDays = (fromDate, toDate) => {
     const start = new Date(fromDate);
     const end = new Date(toDate);
-    const differenceInTime = end.getTime() - start.getTime(); // Fix variable names
+    const differenceInTime = end.getTime() - start.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setNumberOfDays(differenceInDays);
   };
@@ -72,8 +72,16 @@ const LeaveForm = () => {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto items-center flex flex-row">
-        <div className="lg:w-full px-4 py-2 m-2 bg-red-800 flex flex-col">
+      <div className="grid grid-cols-2 gap-4">
+      <div className="lg:w-full md:w-1/2 bg-red-500 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+          <LeaveCredits />
+        </div>
+      <div className="lg:w-full md:w-1/2 bg-blue-500 rounded-lg p-8 flex flex-row md:ml-auto w-full mt-10 md:mt-0">
+          <Calendar />
+        </div>
+      </div>
+      
+        <div className="lg:w-full px-4 py-2 m-2 bg-green-500 flex flex-col">
             <h1 className="text-xl font-bold text-gray-900 mb-4">Leave Application</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -120,19 +128,12 @@ const LeaveForm = () => {
                 </div>
                 <button type="submit">Apply Leave</button>
             </form>
-            <div className="lg:w-full md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                    <Calendar />
-            </div>
-
             </div>
             <div>
-            <div className="lg:w-full md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                    <LeaveCredits />
-                </div>
-            <div className="w-full px-4 py-2 m-2 text-center flex flex-row bg-green-400">
-                <div className="lg:w-full md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <div className="w-full px-4 py-2 m-2 text-center flex flex-row bg-yellow-500">
+                <div className="lg:w-full md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-2 md:mt-0">
                     <h2 className="text-2xl font-bold text-gray-900">Leave Applications</h2>
-                    <div class="relative overflow-x-auto">
+                    <div className="relative overflow-x-auto">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead className="w-full text-sm text-left text-gray-800 dark:text-gray-950">
                         <tr>
@@ -161,7 +162,6 @@ const LeaveForm = () => {
             </div>
             </div>
         </div>
-    </div>
 </section>
   );
 };

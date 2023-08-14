@@ -2,7 +2,8 @@ import { useState } from "react";
 import "chart.js/auto";
 import React from "react";
 import ProfilePhoto from "./ProfilePhoto";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import SideNavLink from "./SideNavLink";
 
 const GlobalSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -50,7 +51,10 @@ const GlobalSidebar = () => {
             showSideNav ? "" : "md:flex hidden"
           }`}
         >
-          <nav className= "flex-1 flex-row justify-items-start">
+          <>
+            <SideNavLink />
+          </>
+          {/* <nav className= "flex-1 flex-row justify-items-start">
             <Link
               className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
               to="/UserProfile"
@@ -94,7 +98,7 @@ const GlobalSidebar = () => {
             to="/ "
           >
             <i className="fas fa-sign-out-alt mr-2"></i>Close
-          </Link>
+          </Link> */}
         </div>
       </div>
   );

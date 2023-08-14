@@ -39,25 +39,23 @@ export default function App() {
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Our Team
+          <h1 className="sm:text-4xl text-2xl font-medium title-font mb-4 text-gray-900">
+            Meet the Team
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subway tile poke farm-to-table. Franzen you probably
-            haven't heard of them.
+          Meet the remarkable individuals that make up Kristine's dedicated team! Let's take a closer look at the members who collaborate with Kristine to achieve outstanding results and create a positive impact.
           </p>
         </div>
         <div className="flex justify-end">
           <input type="text" onChange={handleSearch} className="px-3 py-2 border-gray-300 rounded-lg" placeholder="Search" />
         </div>
       </div>
-      <div className="flex flex-wrap -m-4">
+      <div className="flex flex-wrap">
         {teamMembers.map((member, index) => (
           <TeamMember key={index} {...member} />
         ))}
       </div>
-      <div className="flex justify-end mt-4">
+      <div className="flex justify-end mt-1">
         <button onClick={prevPage} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-l">
           Prev
         </button>

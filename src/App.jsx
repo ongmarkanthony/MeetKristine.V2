@@ -13,6 +13,7 @@ import ReportDashBoard from "./pages/ReportDashBoard";
 import EmployeeDirectory from "./pages/EmployeeDirectory";
 import ProfileInfoForm from "./components/ProfileInfoForm";
 import ApprovalPage from "./pages/ApprovalPage";
+import AddUser from "./pages/AddUser";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
         <Route path="/ProfileInfo" element={<ProfileInfoForm />} />
         <Route path="/Approval" element={<ApprovalPage />} />
+        <Route path="/AddUser" element={<AddUser />} />
       </Routes>
     </BrowserRouter>
   );
