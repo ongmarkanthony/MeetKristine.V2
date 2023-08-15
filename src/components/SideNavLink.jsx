@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
-const NavLink = ({ to, icon, name }) => {
-  return (
-      <Link
-        to={to}
-        className="block text-gray-500 py-2.5 px-4 my-2 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-700 hover:text-white mt-auto"
-      >
-        <i className={`mr-2 ${icon}`} /> {name}
-      </Link>
-  );
-};
+// const NavLink = ({ to, icon, name }) => {
+//   return (
+//       <Link
+//         to={to}
+//         className="block text-gray-500 py-2.5 px-4 my-2 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-700 hover:text-white mt-auto"
+//       >
+//         <i className={`mr-2 ${icon}`} /> {name}
+//       </Link>
+//   );
+// };
 
 const SideNavLink = () => {
   const [showSideNav, setShowSideNav] = useState(false);

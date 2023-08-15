@@ -1,13 +1,20 @@
 import React from 'react'
-import UserHeader from '../components/UserHeader';
+import GlobalSidebar from '../components/GlobalSidebar'
+import FileUpload from '../components/FileUpload'
+import UserFooter from '../components/UserFooter'
 
 const Documents = () => {
   return (
     <>
-    <UserHeader />
-    <div>DOCUMENTS</div>
+    <div className="flex flex-col min-h-screen justify-between">
+      <div className="flex flex-col sm:flex-row flex-grow">
+      <GlobalSidebar />
+        <FileUpload/>
+      </div>
+      <UserFooter />
+      </div>
     </>
   )
 }
 
-export default Documents
+export default Documents;

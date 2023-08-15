@@ -2,7 +2,7 @@ import React from 'react'
 import TimeTracker from '../components/TimeTracker'
 // import TimeChart from '../components/TimeChart'
 import UserFooter from '../components/UserFooter'
-import GlobalSidebar from '../components/GlobalSideBar'
+import GlobalSidebar from '../components/GlobalSidebar'
 
 
 const bundyClock = () => {

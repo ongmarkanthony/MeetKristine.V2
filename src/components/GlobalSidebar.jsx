@@ -2,8 +2,8 @@ import { useState } from "react";
 import "chart.js/auto";
 import React from "react";
 import ProfilePhoto from "./ProfilePhoto";
-// import { Link } from "react-router-dom";
-import SideNavLink from "./SideNavLink";
+import { Link } from "react-router-dom";
+//import SideNavLink from "./SideNavLink";
 
 const GlobalSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -20,11 +20,10 @@ const GlobalSidebar = () => {
 
   return (
     <div className="w-full sm:w-64 bg-white p-4 shadow-lg flex-shrink-0">
-      <div className="bg-white text-white shadow w-full p-2 flex items-center justify-between">
+      <div className=" text-white shadow w-full p-2 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="flex items-center">
-            <img src="#" alt="Logo" className="w-28 h-18 mr-2" />
-            <h2 className="font-bold text-xl">Meet Kristine</h2>
+          <div className="flex flex-row  w-full justify-items-center">
+            <ProfilePhoto />
           </div>
           <div className="md:hidden flex items-center">
             <button id="menuBtn" onClick={() => setShowSideNav(!showSideNav)}>
@@ -42,19 +41,15 @@ const GlobalSidebar = () => {
           </button>
         </div>
       </div>
-
-      <div className="flex-1 flex-row justify-items-start">
-        <ProfilePhoto />
-      </div>
         <div
           className={`p-2 bg-white w-full md:w-60 flex flex-col ${
             showSideNav ? "" : "md:flex hidden"
           }`}
         >
-          <>
+          {/* <>
             <SideNavLink />
-          </>
-          {/* <nav className= "flex-1 flex-row justify-items-start">
+          </> */}
+          <nav className= "flex-1 flex-row justify-items-start">
             <Link
               className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
               to="/UserProfile"
@@ -98,7 +93,7 @@ const GlobalSidebar = () => {
             to="/ "
           >
             <i className="fas fa-sign-out-alt mr-2"></i>Close
-          </Link> */}
+          </Link>
         </div>
       </div>
   );

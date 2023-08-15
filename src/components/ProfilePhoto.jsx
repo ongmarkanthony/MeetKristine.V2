@@ -1,4 +1,5 @@
 import { useState } from "react";
+import profilePic from "../assets/Avatar.jpg";
 
 const ProfilePhoto = () => {
   const [profilePic, setProfilePic] = useState("avatar");
@@ -17,25 +18,25 @@ const ProfilePhoto = () => {
   };
 
   return (
-    <div className=" justify-start grid">
-      <div className="bg-gray-200 p-8 rounded-lg shadow-lg">
+    <div className=" flex justify-center item-center">
+      <div className=" flex flex-col rounded-lg shadow-lg items-center">
         <img
-          src={profilePic === "avatar" ? "/path/to/avatar.jpg" : profilePic}
+          src={profilePic === "avatar" ? "../assets/Avatar.jpg" : profilePic}
           alt="Profile Picture"
-          className="w-32 h-32 rounded-full mb-4"
+          className="w-full h-auto rounded-full  mx-auto object-cover"
         />
         <input
           type="file"
           accept="image/*"
           onChange={handleChangePic}
-          className="hidden"
+          className="hidden text-center"
           id="profile-pic-input"
         />
         <label
           htmlFor="profile-pic-input"
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg cursor-pointer"
+          className="bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg cursor-pointer"
         >
-          Upload Picture
+          Change Profile
         </label>
       </div>
     </div>

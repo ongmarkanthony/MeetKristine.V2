@@ -20,7 +20,7 @@ const AttendanceSummaryReport = () => {
   const [period, setPeriod] = useState('daily');
 
   useEffect(() => {
-    axios.get('http://your-backend-url.com/api/attendance')
+    axios.get('http://your-backend-url.com/api/attendance') //change to actual API
       .then((response) => {
         setAttendanceData(response.data);
       })
