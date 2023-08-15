@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import UserHeader from '../components/UserHeader';
 import UserFooter from '../components/UserFooter';
 import TaskBar from '../components/TaskBar';
 import TimeChart from '../components/TimeChart';
+import GlobalSidebar from '../components/globalSidebar';
 
 const UserDashboard = () => {
   const [holidays, setHolidays] = useState([]);
@@ -22,6 +22,7 @@ const UserDashboard = () => {
 
   return (
     <>
+    <GlobalSidebar />
     <TaskBar/>
     <TimeChart />
     <section className="text-gray-600 body-font">

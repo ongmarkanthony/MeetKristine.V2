@@ -5,7 +5,7 @@ import ProfilePhoto from "./ProfilePhoto";
 import { Link } from "react-router-dom";
 //import SideNavLink from "./SideNavLink";
 
-const GlobalSidebar = () => {
+const MainSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
 
   const data = {
@@ -98,5 +98,4 @@ const GlobalSidebar = () => {
       </div>
   );
 };
-
-export default GlobalSidebar;
+export default MainSidebar;

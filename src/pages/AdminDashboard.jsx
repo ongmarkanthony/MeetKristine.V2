@@ -1,12 +1,12 @@
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import AdminDBMainContent from "../components/AdminDBMainContent";
-import GlobalSideBar from "../components/GlobalSideBar";
+import MainSidebar from "./components/globalSideBar";
 
 const AdminDashboard = () => {
   return (
    <div className="flex">
-      <GlobalSideBar />
+      <MainSidebar />
       <AdminDBMainContent />
     </div>
   );

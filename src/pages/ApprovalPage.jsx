@@ -1,12 +1,12 @@
 import React from "react";
 import ApprovalTable from "../components/ApprovalTable";
-import GlobalSidebar from "../components/GlobalSidebar";
+import MainSidebar from "../components/globalSidebar";
 
 function ApprovalPage() {
   return (
     <>
       <div className="flex h-screen">
-        <GlobalSidebar />
+        <MainSidebar />
         <ApprovalTable />
       </div>
     </>

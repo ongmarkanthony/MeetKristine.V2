@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import ProfileInfoForm from "../components/ProfileInfoForm";
 import AddressInfoForm from "../components/AddressInfoForm";
 import OtherInfoForm from "../components/OtherInfoForm";
-import GlobalSidebar from "../components/GlobalSidebar";
 import UserFooter from "../components/UserFooter";
+import MainSidebar from "../components/globalSidebar";
 
 const UserProfile = () => {
   const formik = useFormik({
@@ -63,7 +63,7 @@ const UserProfile = () => {
     <>
     <div className="flex h-screen bg-gray-100">
       <div className="w-full sm:w-64 flex-shrink-0">
-        <GlobalSidebar />
+        <MainSidebar />
       </div>
       <div className="flex flex-col h-screen bg-white p-4 shadow-lg w-full overflow-auto">
       <ProfileInfoForm formik={formik} />
