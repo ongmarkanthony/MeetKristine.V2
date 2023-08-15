@@ -1,5 +1,5 @@
 import React from 'react'
-import GlobalSideBar from '../components/GlobalSideBar'
+import GlobalSideBar from '../components/globalSidebar'
 import LeaveForm from '../components/LeaveForm'
 import UserFooter from '../components/UserFooter'
 
@@ -17,4 +17,4 @@ const TimeOff = () => {
   )
 }
 
-export default TimeOff
+export default TimeOff;

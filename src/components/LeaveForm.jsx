@@ -100,8 +100,9 @@ const LeaveForm = () => {
             </div>
                 </div>
                 <div>
-                <label htmlFor="fromDate" className="block mb-2 text-sm font-medium text-gray-950 dark:text-gray-950">From:</label>
+                <label htmlFor="fromDate" className=" block mb-2 text-sm font-medium text-gray-950 dark:text-gray-950">From:</label>
                 <input
+                    className="w-1/2 h-10 mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-100 dark:border-white"
                     type="date"
                     id="fromDate"
                     onChange={handleFromDateChange}
@@ -111,22 +112,22 @@ const LeaveForm = () => {
                 <div>
                 <label htmlFor="toDate" className="block mb-2 text-sm font-medium text-gray-950 dark:text-gray-950">To:</label>
                 <input
-                    className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-1/2 h-10 mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-100 dark:border-white"
                     type="date"
                     id="toDate"
                     onChange={handleToDateChange}
                     value={toDate}
                 />
                 </div>
-                <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+                <div className="w-1/2 h-30 mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-100 dark:border-gray-600">
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-950 dark:text-gray-950">Message:</label>
-                <textarea id="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..." onChange={handleMessageChange} value={message}></textarea>
+                <textarea id="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write your thoughts here..." onChange={handleMessageChange} value={message}></textarea>
                 </div>
                 <div>
-                <label htmlFor="documents" className="block mb-2 text-sm font-medium text-gray-950 dark:text-gray-950">Upload Documents:</label>
-                <input type="file" id="documents" onChange={handleDocumentsChange} multiple />
+                <label htmlFor="documents" className="block mb-2 text-sm font-medium  text-gray-950 dark:text-gray-950">Upload Documents:</label>
+                <input className="bg-sky-500 hover:bg-sky-700 rounded-full h-10 w-1/4 text-gray-900" type="file" id="documents" onChange={handleDocumentsChange} multiple />
                 </div>
-                <button type="submit">Apply Leave</button>
+                <button className="bg-sky-500 hover:bg-sky-700 rounded-full h-10 w-1/4 text-gray-900" type="submit">Apply Leave</button>
             </form>
             </div>
             <div>
