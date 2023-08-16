@@ -1,7 +1,5 @@
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import AdminDBMainContent from "../components/AdminDBMainContent";
-import MainSidebar from "./components/globalSideBar";
+import MainSidebar from "../components/GlobalSidebar";
 
 const AdminDashboard = () => {
   return (

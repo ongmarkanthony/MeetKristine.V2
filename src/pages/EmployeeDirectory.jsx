@@ -1,7 +1,7 @@
 import React from "react";
 import DirectoryContent from "../components/DirectoryContent";
 import UserFooter from "../components/UserFooter";
-import MainSidebar from "../components/globalSidebar";
+import MainSidebar from "../components/GlobalSidebar";
 
 const EmployeeDirectory = () => {
   return (
@@ -9,7 +9,7 @@ const EmployeeDirectory = () => {
     <>
       <div className="flex flex-col min-h-screen justify-between bg-gray-100">
         <div className="flex flex-col sm:flex-row flex-grow">
-        <MainSidebar />
+        <MainSidebar/>
         <DirectoryContent />
         </div>
         <UserFooter />

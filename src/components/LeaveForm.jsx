@@ -52,7 +52,7 @@ const LeaveForm = () => {
 
     const newLeave = {
       leaveType: leaveType,
-      leaveDuration: leaveDuration,
+      leaveDuration:numberOfDays,
       fromDate: fromDate,
       toDate: toDate,
       message: message,
@@ -150,7 +150,7 @@ const LeaveForm = () => {
                         {leaveDetails.map((leave, index) => (
                             <tr key={index} className="bg-white dark:bg-gray-800">
                             <td className="px-6 py-4  font-bold text-gray-900 ">{leave.leaveType}</td>
-                            <td className="px-6 py-4  font-bold text-gray-900 ">{leave.numberOfDays}</td>
+                            <td className="px-6 py-4  font-bold text-gray-900 ">{leave.leaveDuration}</td>
                             <td className="px-6 py-4  font-bold text-gray-900 ">{leave.fromDate}</td>
                             <td className="px-6 py-4  font-bold text-gray-900 ">{leave.toDate}</td>
                             <td className="px-6 py-4  font-bold text-gray-900 ">{leave.message}</td>
