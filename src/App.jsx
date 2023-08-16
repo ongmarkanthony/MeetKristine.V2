@@ -4,7 +4,6 @@ import Management from "./pages/Management";
 import LoginPage from "./pages/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import UserDashboardPages from "./pages/UserDashboardPage";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "./pages/Documents";
@@ -14,6 +13,7 @@ import EmployeeDirectory from "./pages/EmployeeDirectory";
 import ProfileInfoForm from "./components/ProfileInfoForm";
 import ApprovalPage from "./pages/ApprovalPage";
 import AddUser from "./pages/AddUser";
+import UserDashboard from "./pages/UserDashboard";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -22,7 +22,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/UserDashboardPages" element={<UserDashboardPages />} />
+        <Route path="/UserDashboardPages" element={<UserDashboard />} />
         <Route path="/UserProfile" element={<UserProfile />} />
         <Route path="/BundyClock" element={<BundyClock />} />
         <Route path="/TimeOff" element={<TimeOff />} />

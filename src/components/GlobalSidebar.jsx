@@ -51,6 +51,12 @@ const MainSidebar = () => {
             <SideNavLink />
           </> */}
           <nav className= "flex-1 flex-row justify-items-start">
+            <Link 
+              className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+              to="/UserDashboard"
+            >
+              <i className="fas fa-home mr-2"></i>Dashboard
+            </Link>
             <Link
               className="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
               to="/UserProfile"
