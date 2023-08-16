@@ -22,8 +22,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/UserDashboardPages" element={<UserDashboard />} />
         <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="/UserDashboard" element={<UserDashboard />} />
         <Route path="/BundyClock" element={<BundyClock />} />
         <Route path="/TimeOff" element={<TimeOff />} />
         <Route path="/Document" element={<Documents />} />

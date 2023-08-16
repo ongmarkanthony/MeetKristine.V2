@@ -14,7 +14,7 @@ const MainSidebar = () => {
     <div className="w-full  sm:w-64 bg-white p-4 shadow-lg flex-shrink-0">
       <div className=" text-white shadow w-full p-2 flex items-center justify-between">
         <div className="flex items-center">
-        <div class="mt-8 text-center">
+        <div className="mt-8 text-center">
             <img 
             src="Avatar.jpg" 
             alt="" 
@@ -23,7 +23,7 @@ const MainSidebar = () => {
             <span className="hidden text-gray-400 lg:block">Admin</span>
         </div>
         <div>
-        <span class="-mr-1 font-medium">Dashboard</span>
+        <span className="-mr-1 font-medium">Dashboard</span>
         </div>
       
           <div className="md:hidden flex items-center">
