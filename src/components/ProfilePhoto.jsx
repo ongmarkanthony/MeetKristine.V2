@@ -1,29 +1,39 @@
 import { useState } from "react";
-import profilePic from "../assets/Avatar.jpg";
+
+const Avatar = () => {
+  const [avatar, setAvatar] = useState("DefaultAvatar");
+}
 
 const ProfilePhoto = () => {
-  const [profilePic, setProfilePic] = useState("avatar");
+  const [profilePic, setProfilePic] = useState("DefaultAvatar");
 
   const handleChangePic = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        const newPic = e.target.result;
-        setProfilePic(newPic);
-        // Logic to store the newPic in the backend database
+        setProfilePic(e.target.result);
       };
       reader.readAsDataURL(file);
     }
   };
 
+  const handleSubmit = () => {
+      fetch ("/api/upload", {
+        method: "POST",
+        body: profilePic
+      })  
+      
+  
+  }
+
   return (
-    <div className=" flex justify-center item-center">
-      <div className=" flex flex-col rounded-lg shadow-lg items-center">
+    <div className="flex justify-center items-center">
+      <div className="flex flex-col rounded-lg shadow-lg items-center">
         <img
-          src={profilePic === "avatar" ? "../assets/Avatar.jpg" : profilePic}
-          alt="Profile Picture"
-          className="w-full h-auto rounded-full  mx-auto object-cover"
+          src={profilePic}
+          alt="Profile"
+          className="w-full h-auto rounded-full mx-auto object-cover"
         />
         <input
           type="file"
