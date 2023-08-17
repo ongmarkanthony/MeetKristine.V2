@@ -1,24 +1,26 @@
 import { useState } from "react";
 
-const TaskChecklist = ({tasks, setTasks}) => {
+function App() {
+  const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  const handleAddTask = () => {
+  const addTodo = () => {
     if (inputValue) {
-      setTasks([...tasks, inputValue]);
+      setTodos([...todos, inputValue]);
       setInputValue("");
     }
   };
 
-  const handleDeleteTask = (index) => {
-    const newTasks = [...tasks];
-    newTasks.splice(index, 1);
-    setTasks(newTasks);
+  const deleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4">Task Checklist</h1>
+    <div className="max-w-md mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-4">To-do App</h1>
+
       <div className="flex mb-4">
         <input
           type="text"
@@ -29,23 +31,23 @@ const TaskChecklist = ({tasks, setTasks}) => {
         />
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded"
-          onClick={handleAddTask}
+          onClick={addTodo}
         >
           Add
         </button>
       </div>
 
-      {tasks.length > 0 ? (
+      {todos.length > 0 ? (
         <ul className="space-y-2">
-          {tasks.map((task, index) => (
+          {todos.map((todo, index) => (
             <li
               key={index}
               className="flex items-center justify-between px-4 py-2 bg-gray-100 rounded"
             >
-              {task}
+              {todo}
               <button
                 className="px-2 py-1 bg-red-500 text-white rounded"
-                onClick={() => handleDeleteTask(index)}
+                onClick={() => deleteTodo(index)}
               >
                 Delete
               </button>
@@ -53,11 +55,10 @@ const TaskChecklist = ({tasks, setTasks}) => {
           ))}
         </ul>
       ) : (
-        <p className="text-gray-500">No tasks added yet.</p>
+        <p className="text-gray-500">No todos added yet.</p>
       )}
     </div>
   );
-};
+}
 
-
-export default TaskChecklist;
+export default App;
