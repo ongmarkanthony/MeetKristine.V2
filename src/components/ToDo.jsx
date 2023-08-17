@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">To-do App</h1>
+      <h1 className="text-3xl font-bold mb-4">Task List</h1>
 
       <div className="flex mb-4">
         <input
