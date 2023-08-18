@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Card3 = () => {
-    const [attritionRate, setAttritionRate] = useState(.5);
+    const [attritionRate, setAttritionRate] = useState(3);
 
   const getAttritionRateColor = () => {
     if (attritionRate > 3) {
@@ -17,7 +17,7 @@ const Card3 = () => {
     if (attritionRate > 3) {
       return (
         <svg
-          className="w-6 h-6 fill-current text-red-500 ml-2"
+          className="w-8 h-8 fill-current text-red-500 ml-2"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -27,37 +27,27 @@ const Card3 = () => {
       );
     } else if (attritionRate < 3) {
       return (
-        <svg
-          className="w-6 h-6 fill-current text-green-500 ml-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M7 14l5-5 5 5H7z" />
+      <svg className="w-[10px] h-[10px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 12">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m1 7 4 4 4-4M1 1l4 4 4-4"/>
         </svg>
-      );
+        );
     } else {
       return null;
     }
   };
 
   return (
-    <div className="bg-cyan-400 rounded-lg shadow-md p-4 h-1/4">
+    <div className="bg-cyan-400 rounded-lg shadow-md p-4 h-1/2">
       <div className="flex items-center mb-4">
-        <svg
-          className="w-6 h-6 fill-current text-gray-600 mr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M19.707 5.293L18.293 6.707l-3.536-3.536A1 1 0 0 0 14.586 3H9.414A2 2 0 0 0 7.414 4.586L3.878 8.121a4 4 0 0 0-.707 4.95l1.293 1.293a1 1 0 0 0 1.414 0L9 12.414A2 2 0 0 0 9.414 11H14.586a1 1 0 0 0 .707-1.707l-1.293-1.293a4 4 0 0 0-.707-4.95l3.536 3.536 1.414-1.414zM12 16a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-        </svg>
-        <h2 className={`text-xl font-semibold ${getAttritionRateColor()}`}>
-          Average Attrition Rate
+      <svg className="w-[47px] h-[47px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M1 1v14h16m0-9-3-2-3 5-3-2-3 4"/>
+      </svg>
+          <h2 className={`text-2xl font-semibold ${getAttritionRateColor()}`}>
+          Attrition Rate
           {getArrowIcon()}
         </h2>
       </div>
-      <div className={`text-4xl font-bold mt-5 ${getAttritionRateColor()}`}>{attritionRate}%</div>
+      <div className={`text-4xl font-bold mt-10 text-center ${getAttritionRateColor()}`}>{attritionRate}%</div>
     </div>
   );
 }

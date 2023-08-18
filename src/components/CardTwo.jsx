@@ -5,19 +5,14 @@ const Card2 = () => {
     const [averageHours, setAverageHours] = useState(48.36);
 
   return (
-    <div className="bg-cyan-400 rounded-lg shadow-md p-4 h-1/4">
+    <div className="bg-cyan-400 rounded-lg shadow-md p-4 h-1/2">
       <div className="flex items-center mb-4">
-        <svg
-          className="w-6 h-6 fill-current text-cyan-600 mr-2"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9 16.2L4.8 12l1.4-1.4L9 13.4l8.6-8.6L19 5.8 9 16.2z" />
-        </svg>
-        <h2 className="text-xl text-gray-800 font-semibold">Average Work Hours</h2>
+      <svg className="w-[47px] h-[47px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z"/>
+      </svg>
+        <h2 className="text-2xl text-gray-800 font-semibold text-center">Ave. Work Hours</h2>
       </div>
-      <div className="text-4xl text-gray-800 font-bold mt-8">{averageHours}</div>
+      <div className="text-4xl text-gray-800 font-bold mt-7">{averageHours}</div>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const EmployeeEngagementReport = () => (
 );
 
 const Card = ({ title, icon, value }) => (
-  <div className="bg-white rounded-lg p-4 mb-4 flex items-center">
+  <div className="bg-white rounded-lg p-4 mb-4 flex items-center w-1/2">
     <div className="flex-shrink-0 mr-4">
       <span className="text-4xl">{icon}</span>
     </div>
