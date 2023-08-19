@@ -37,7 +37,7 @@ const Card3 = () => {
   };
 
   return (
-    <div className="bg-cyan-400 rounded-lg shadow-md p-4 h-1/2">
+    <div className=" p-4 h-3/4 mb-5">
       <div className="flex items-center mb-4">
       <svg className="w-[47px] h-[47px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M1 1v14h16m0-9-3-2-3 5-3-2-3 4"/>
@@ -47,7 +47,7 @@ const Card3 = () => {
           {getArrowIcon()}
         </h2>
       </div>
-      <div className={`text-4xl font-bold mt-10 text-center ${getAttritionRateColor()}`}>{attritionRate}%</div>
+      <div className={`text-4xl font-bold mt-10  ${getAttritionRateColor()}`}>{attritionRate}%</div>
     </div>
   );
 }

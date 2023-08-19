@@ -18,18 +18,15 @@ const EmployeePerformanceSummary = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Employee Performance Summary:</h1>
-      <ul className="list-disc pl-5 mb-4">
-        <li className="mb-1">Total Employees: {totalEmployees}</li>
-        <li className="mb-1">Active Employees: {activeEmployees}</li>
-        <li className="mb-1">On Leave: {onLeave}</li>
-        <li className="mb-1">Terminated: {terminated}</li>
-      </ul>
-      <div className="w-64">
-        <Pie data={data} />
-      </div>
-    </div>
+    <div className="p-4 shadow-md transform perspective(1000px) rotateX(10deg) rotateY(10deg) w-full ">
+            <Pie data={data} />
+          <ul className="list-disc pl-5 mb-4 shadow-md transform perspective(1000px) rotateX(10deg) rotateY(10deg) text-center w-full">
+            <li className="mb-1">Total Employees: {totalEmployees}</li>
+            <li className="mb-1">Active Employees: {activeEmployees}</li>
+            <li className="mb-1">On Leave: {onLeave}</li>
+            <li className="mb-1">Terminated: {terminated}</li>
+          </ul>
+        </div>
   );
 };
 

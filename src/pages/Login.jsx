@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { authenticateUser } from "../utils/userAuth";
-import { resetPassword } from "../utils/resetPass";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [forgotPassword, setForgotPassword] = useState(false);
+
+  const handleForgotPassword = () => {
+    setForgotPassword(!forgotPassword);
+  }
 
   const handleLogin = async () => {
     try {
@@ -27,6 +31,8 @@ const Login = () => {
       console.error(error);
     }
   };
+
+  
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -75,6 +81,18 @@ const Login = () => {
                   <button className="bg-blue-500 text-white rounded-md px-2 py-1">
                     Submit
                   </button>
+                </div>
+                <div className="relative">
+                  <label className="inline-flex items-center">
+                    <input 
+                    type="radio" 
+                    className="form-radio" 
+                    name="passwordOption" value="forgot" 
+                    checked={forgotPassword} 
+                    onChange={() => setForgotPassword(!forgotPassword)} 
+                    />
+                    <Link to="/PasswordResetForm" className="ml-2">Forgot Password?</Link>
+                  </label>
                 </div>
               </div>
             </div>

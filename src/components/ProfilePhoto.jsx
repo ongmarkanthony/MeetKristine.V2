@@ -1,55 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
-const Avatar = () => {
-  const [avatar, setAvatar] = useState("DefaultAvatar");
-}
+const defaultImage = "https://via.placeholder.com/150";
 
-const ProfilePhoto = () => {
-  const [profilePic, setProfilePic] = useState("DefaultAvatar");
+const UserProfile = ({ userId, size }) => {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [image, setImage] = useState(defaultImage);
+  const imageSize = size === "large" ? "w-28 h-28" : "w-10 h-10";
+  const textVisibility = size === "large" ? "block" : "hidden";
 
-  const handleChangePic = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setProfilePic(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
+  useEffect(() => {
+    axios.get(`https://api.example.com/user/${userId}`)
+      .then(response => {
+          setName(response.data.name);
+          setRole(response.data.role);
+          setImage(response.data.imageUrl || defaultImage);
+      });
+  }, [userId]);
+
+  const handleImageChange = (event) => {
+    setImage(URL.createObjectURL(event.target.files[0]));
+    const formData = new FormData();
+    formData.append('file', event.target.files[0]);
+
+    axios.post(`https://api.example.com/user/${userId}/image`, formData);
   };
 
-  const handleSubmit = () => {
-      fetch ("/api/upload", {
-        method: "POST",
-        body: profilePic
-      })  
-      
-  
-  }
-
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col rounded-lg shadow-lg items-center">
-        <img
-          src={profilePic}
-          alt="Profile"
-          className="w-full h-auto rounded-full mx-auto object-cover"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleChangePic}
-          className="hidden text-center"
-          id="profile-pic-input"
-        />
-        <label
-          htmlFor="profile-pic-input"
-          className="bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg cursor-pointer"
-        >
-          Change Profile
-        </label>
+    <div className="text-white shadow w-full p-2 flex items-center justify-between">
+      <div className="flex items-center">
+        <div className="mt-8 text-center">
+          <img 
+            src={image} 
+            alt="" 
+            className={`m-auto rounded-full object-cover ${imageSize}`}/>
+          <h5 className={`mt-4 text-xl font-semibold text-gray-600 ${textVisibility}`}>{name}</h5>
+          <span className={`text-gray-400 ${textVisibility}`}>{role}</span>
+          <input 
+            type="file" 
+            onChange={handleImageChange} 
+            className={`mt-4 ${textVisibility}`}
+          />
+        </div>
       </div>
     </div>
+  );
+};
+
+const ProfilePhoto = () => {
+  const [userId, setUserId] = useState(null);
+  
+  useEffect(() => {
+    axios.get('https://api.example.com/user/loggedIn')
+      .then(response => {
+          setUserId(response.data.userId);
+      });
+  }, []);
+
+  return (
+    userId && <UserProfile userId={userId} size="large" />
   );
 };
 

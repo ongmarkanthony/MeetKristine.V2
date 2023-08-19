@@ -1,67 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
+const Header = ({ firstName, userAvatar }) => {
+  return (
+    <header className="p-4 bg-blue-500 text-white flex flex-row justify-between items-center">
+      <h6 className="text-xl font-bold">Welcome, {firstName}!</h6>
+    </header>
+  );
+};
 
 const UserHeader = () => {
+  const [firstName, setFirstName] = useState("");
+
+  useEffect(() => {
+    // Fetch the firstName from the backend API and set it to the state
+    fetch("https://api.example.com/user")
+      .then((response) => response.json())
+      .then((data) => setFirstName(data.firstName))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="ml-3 text-xl">Welcome User</span>
-        </a>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link
-            to="/UserProfile"
-            className="text-gray-950 hover:text-black px-6 py-2 block"
-          >
-            Your Profile
-          </Link>
-          <Link
-            to="/bundyClock"
-            className="text-gray-950 hover:text-black px-6 py-2 block"
-          >
-            Bundy Clock
-          </Link>
-          <Link
-            to="/timeOff"
-            className="text-gray-950 hover:text-black px-6 py-2 block"
-          >
-            Time Off
-          </Link>
-          <Link
-            to="/documents"
-            className="text-gray-950 hover:text-black px-6 py-2 block"
-          >
-            Documents
-          </Link>
-        </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Logout
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
+    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-2 flex flex-col">
+      <Header firstName={firstName}/>
+    </div>
   );
 };
 

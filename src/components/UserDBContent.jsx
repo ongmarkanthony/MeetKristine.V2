@@ -14,10 +14,6 @@ const UserDBContent = () => {
 
   return (
     <div className=" w-screen flex flex-col">
-        <header className="p-4 bg-blue-500 text-white flex flex-row justify-between items-center">
-        <h1 className="text-2xl font-bold">Welcome, {firstName}</h1>
-        <img src={userAvatar} alt="User Avatar" className="w-10 h-10 rounded-full"/>
-        </header>
             <div className="flex flex-row ml-5 mr-5">
                 <div className="p-8 mt-10 ml-10  shadow-md rounded-md h-3/4 w-1/3">
                     <LeaveCredits />

@@ -21,7 +21,13 @@ const PerformanceRatingDistribution = () => {
     ]
   };
 
-  return <Line data={data} />;
+  return (
+    <div className="mt-3">
+      <h1 className="text-2xl font-semibold text-center mb-6">Performance Rating Distribution</h1>
+      <Line data={data} />
+    </div>
+  )
+  
 };
 
 export default PerformanceRatingDistribution;

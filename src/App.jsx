@@ -10,10 +10,10 @@ import Documents from "./pages/Documents";
 import BundyClock from "./pages/bundyClock";
 import ReportDashBoard from "./pages/ReportDashBoard";
 import EmployeeDirectory from "./pages/EmployeeDirectory";
-import ProfileInfoForm from "./components/ProfileInfoForm";
 import ApprovalPage from "./pages/ApprovalPage";
 import AddUser from "./pages/AddUser";
 import UserDashboard from "./pages/UserDashboard";
+import PasswordResetForm from "./components/PasswordResetForm";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/Login" element={<LoginPage />} />
         <Route path="/UserProfile" element={<UserProfile />} />
         <Route path="/UserDashboard" element={<UserDashboard />} />
         <Route path="/BundyClock" element={<BundyClock />} />
@@ -31,9 +31,10 @@ const App = () => {
         <Route path="/Management" element={<Management />} />
         <Route path="/ReportDashBoard" element={<ReportDashBoard />} />
         <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
-        <Route path="/ProfileInfo" element={<ProfileInfoForm />} />
         <Route path="/Approval" element={<ApprovalPage />} />
         <Route path="/AddUser" element={<AddUser />} />
+        <Route path="/PasswordResetForm" element={<PasswordResetForm />} />
+
       </Routes>
     </BrowserRouter>
   );

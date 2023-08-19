@@ -8,10 +8,10 @@ const Icon = () => (
 );
 
 const Card1 = () => {
-  const [totalEmployees, setTotalEmployees] = useState(100);
+  const [totalEmployees, setTotalEmployees] = useState(245);
 
   return (
-    <div className="bg-cyan-400 rounded-lg shadow-md p-4  h-1/2">
+    <div className=" p-4 h-3/4 mb-5 ">
       <div className="flex items-center mb-4">
         <Icon />
         <h2 className="text-2xl font-semibold mr-10 text-center">Total Employees</h2>
