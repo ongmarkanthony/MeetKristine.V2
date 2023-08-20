@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ProfilePhoto from './ProfilePhoto';
 
 const ProfileInfoForm = () => {
   const [firstName, setFirstName] = useState("");

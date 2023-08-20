@@ -7,7 +7,6 @@ import TaskToDo from './TaskSummary';
 
 
 const UserDBContent = () => {
-    const [firstName, setFirstName] = useState("");
     const [totalHours, setTotalHours] = useState(48.36);
     const [userAvatar, setUserAvatar] = useState("https://previews.123rf.com/images/virtosmedia/virtosmedia2301/virtosmedia230116239/197245633-portrait-of-a-young-woman-in-glasses-and-a-hoodie-vector-illustration.jpg");
 
@@ -15,7 +14,7 @@ const UserDBContent = () => {
   return (
     <div className=" w-screen flex flex-col">
             <div className="flex flex-row ml-5 mr-5">
-                <div className="p-8 mt-10 ml-10  shadow-md rounded-md h-3/4 w-1/3">
+                <div className="p-8 mt-10 ml-10  shadow-md rounded-md h-3/4 w-full">
                     <LeaveCredits />
                 </div>
                 <div className="p-8 mt-10 ml-10  shadow-md rounded-md h-3/4 w-1/3">

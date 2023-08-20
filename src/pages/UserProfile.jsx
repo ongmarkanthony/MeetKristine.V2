@@ -5,7 +5,7 @@ import ProfileInfoForm from "../components/ProfileInfoForm";
 import AddressInfoForm from "../components/AddressInfoForm";
 import OtherInfoForm from "../components/OtherInfoForm";
 import UserFooter from "../components/UserFooter";
-import MainSidebar from "../components/globalSidebar";
+import MainSidebar from "../components/GlobalSidebar";
 
 const UserProfile = () => {
   const formik = useFormik({
@@ -55,24 +55,25 @@ const UserProfile = () => {
       bankName: Yup.string().required("Required"),
       bankAccount: Yup.string().required("Required"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    onSubmit: handleSubmit,
   });
+
+  const handleSubmit = (values) => {
+    alert(JSON.stringify(values, null, 2));
+  };
+
   return (
-    <>
-    <div className="flex h-screen bg-gray-100">
-      <div className="w-full sm:w-64 flex-shrink-0">
-        <MainSidebar />
+    <div className="flex h-screen w-full bg-gray-100">
+      <div className="w-full md:w-80 flex-shrink-0">
+        <MainSidebar/>
       </div>
       <div className="flex flex-col h-screen bg-white p-4 shadow-lg w-full overflow-auto">
-      <ProfileInfoForm formik={formik} />
-      <AddressInfoForm formik={formik} />
-      <OtherInfoForm formik={formik} />
+        <ProfileInfoForm formik={formik} />
+        <AddressInfoForm formik={formik} />
+        <OtherInfoForm formik={formik} />
       </div>
-    </div>
       <UserFooter /> 
-    </>
+    </div>
   );
 };
 

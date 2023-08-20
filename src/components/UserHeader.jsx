@@ -13,7 +13,7 @@ const UserHeader = () => {
 
   useEffect(() => {
     // Fetch the firstName from the backend API and set it to the state
-    fetch("https://api.example.com/user")
+    fetch(" http://localhost:8000/api/v1/users")
       .then((response) => response.json())
       .then((data) => setFirstName(data.firstName))
       .catch((error) => console.log(error));

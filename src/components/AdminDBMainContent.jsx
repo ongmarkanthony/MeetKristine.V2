@@ -7,7 +7,7 @@ import EmployeeEngagementReport from './EmployeeEngagmentReport';
 import PerformanceRatingDistribution from './PerformanceRating';
 import EmpPerDeptReport from './PerDepartmentReport';
 import WorkForceDistribution from './WorkForceDistri';
-import UserHeader from './UserHeader';
+import PerformanceRatings from './PerformanceRating';
 
 const AdminDBMainContent = () => {
   return (
@@ -26,7 +26,7 @@ const AdminDBMainContent = () => {
         <Card4 />
       </div>
       <div className="col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-5 row-span-2 sm:row-span-2 md:row-span-3 lg:row-span-3 row-start-3 h-120">
-        <PerformanceRatingDistribution />
+        <PerformanceRatings />
       </div>
       <div className="col-span-1 sm:col-span-1 md:col-span-4 lg:col-span-3 row-span-2 sm:row-span-2 md:row-span-3 lg:row-span-3 col-start-1 sm:col-start-1 md:col-start-3 lg:col-start-6 row-start-3 rounded-lg shadow-md p-4 w-full">
         <EmployeeEngagementReport />

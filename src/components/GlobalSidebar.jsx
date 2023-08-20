@@ -7,17 +7,16 @@ import LinkComponent from "./NavLink";
 const MainSidebar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
 
-
   return (
-    <div className="flex flex-col border w-1/4">
+    <div className="flex flex-col border w-screen">
       <div className="bg-blue-500 p-2 text-white">
-        <UserHeader/>
+        <UserHeader />
       </div>
       <div className="bg-red-500 p-2 text-white">
         <ProfilePhoto />
       </div>
       <div className="bg-green-500 p-2 text-white h-3/4">
-        <LinkComponent/>
+        <LinkComponent />
       </div>
     </div>
   );

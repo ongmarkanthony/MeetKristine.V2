@@ -14,6 +14,9 @@ import ApprovalPage from "./pages/ApprovalPage";
 import AddUser from "./pages/AddUser";
 import UserDashboard from "./pages/UserDashboard";
 import PasswordResetForm from "./components/PasswordResetForm";
+import EmployeeSalaryReport from "./components/EmployeeSalaryReport";
+import PerformanceRatings from "./components/PerformanceRating";
+import PerDepartmentReport from "./components/PerDepartmentReport";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -27,13 +30,17 @@ const App = () => {
         <Route path="/BundyClock" element={<BundyClock />} />
         <Route path="/TimeOff" element={<TimeOff />} />
         <Route path="/Document" element={<Documents />} />
-        <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/Management" element={<Management />} />
         <Route path="/ReportDashBoard" element={<ReportDashBoard />} />
         <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
         <Route path="/Approval" element={<ApprovalPage />} />
         <Route path="/AddUser" element={<AddUser />} />
         <Route path="/PasswordResetForm" element={<PasswordResetForm />} />
+        <Route path="/EmployeeSalaryReport" element={<EmployeeSalaryReport />} />
+        <Route path="/PerformanceRatings" element={<PerformanceRatings />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/PerDepartmentReport" element={<PerDepartmentReport />} />
+
 
       </Routes>
     </BrowserRouter>

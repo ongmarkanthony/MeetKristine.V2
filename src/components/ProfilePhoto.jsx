@@ -52,7 +52,7 @@ const ProfilePhoto = () => {
   const [userId, setUserId] = useState(null);
   
   useEffect(() => {
-    axios.get('https://api.example.com/user/loggedIn')
+    axios.get(' http://localhost:8000/api/v1/users')
       .then(response => {
           setUserId(response.data.userId);
       });

@@ -1,13 +1,4 @@
-import React from "react";
-
-const EmployeeEngagementReport = () => (
-  <div className="p-4 rounded-lg  shadow-md transform perspective(1000px) rotateX(10deg) rotateY(10deg) w-full h-full">
-    <Card title="Employee Satisfaction" icon="🌟" value="85%" />
-    <Card title="Average Work Hours" icon="⏰" value="42 hours/week" />
-    <Card title="Average Overtime Hours" icon="⏱️" value="5 hours/week" />
-    <Card title="Employee Turnover Rate" icon="🔄" value="2.5%" />
-  </div>
-);
+import { useState } from "react";
 
 const Card = ({ title, icon, value }) => (
   <div className="bg-white rounded-lg p-4 mb-4 flex items-center w-full">
@@ -20,5 +11,22 @@ const Card = ({ title, icon, value }) => (
     </div>
   </div>
 );
+
+const EmployeeEngagementReport = () => {
+  const [reportData, setReportData] = useState([
+    {title: "Employee Satisfaction", icon: "🌟", value: "85%"},
+    {title: "Average Work Hours", icon: "⏰", value: "42 hours/week"},
+    {title: "Average Overtime Hours", icon: "⏱️", value: "5 hours/week"},
+    {title: "Employee Turnover Rate", icon: "🔄", value: "2.5%"}
+  ]);
+
+  return (
+    <div className="p-4 rounded-lg shadow-md transform perspective-1000 rotate-x-10 rotate-y-10 w-full h-full">
+      {reportData.map((data, index) => (
+        <Card key={index} title={data.title} icon={data.icon} value={data.value} />
+      ))}
+    </div>
+  );
+}
 
 export default EmployeeEngagementReport;

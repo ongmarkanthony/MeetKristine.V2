@@ -1,36 +1,51 @@
-import { Pie } from "react-chartjs-2";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const EmpPerDeptReport = () => {
-const data = {
-  labels: ["Sales", "IT", "Finance", "Admin", "Human Resources"],
-  datasets: [
-    {
-      data: [15, 136, 35, 20, 12],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)"
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)"
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
+function EmployeeList({ employees, filter }) {
+  const filtered = employees.filter((employee) => employee.department === filter);
 
   return (
-    <div className="p-10">
-      <h1 className="text-2xl font-semibold text-center mb-6">Employee - Department Report</h1>
-      <Pie data={data} />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {filtered.map((employee) => (
+        <div key={employee.id} className="p-4 bg-white shadow-lg rounded-lg">
+          <h2 className="text-2xl font-bold mb-2">{employee.firstName}{employee.lastName}</h2>
+          <p className="text-md">{employee.department}</p>
+        </div>
+      ))}
     </div>
   );
 }
 
-export default EmpPerDeptReport;
+export default function EmployeePerDepartment() {
+  const [filter, setFilter] = useState('All');
+  const [employees, setEmployees] = useState([]);
+  const departments = ['All', 'Admin', 'HR', 'Accounting', 'Finance', 'Marketing', 'Sales'];
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/v1/users')
+      .then(response => setEmployees(response.data.data))
+      .catch(error => console.error(error));
+  }, []);
+
+  return (
+    <div className="p-6">
+      <select defaultValue="All" onChange={(e) => setFilter(e.target.value)} className="mb-4 w-full p-2 border rounded">
+        {departments.map((department) => (
+          <option key={department} value={department}>
+            {department}
+          </option>
+        ))}
+      </select>
+
+      {filter === 'All' ? (
+        employees.map((employee) => (
+          <EmployeeList key={employee.id} employees={employees} />
+        ))
+      ) : (
+        <EmployeeList employees={employees} filter={filter} />
+      )}
+    </div>
+    
+
+  );
+}

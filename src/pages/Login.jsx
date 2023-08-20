@@ -7,34 +7,33 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [forgotPassword, setForgotPassword] = useState(false);
 
-  const handleForgotPassword = () => {
-    setForgotPassword(!forgotPassword);
-  }
+  const toggleForgotPassword = () => {
+    setForgotPassword((prevForgotPassword) => !prevForgotPassword);
+  };
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("", {
-        method : "GET",
+      const response = await fetch("http://localhost:8000/api/v1/users", {
+        method: "POST", // Use POST method for sending login credentials
         headers: {
           "Content-Type": "application/json",
-        }, 
-        body : JSON.stringify({ username,password})
-        });
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-        if (response.ok) {
-          const user = await response.json();
-          authenticateUser(user);
-        } else {
-          alert("Invalid Credentials");
-        }
+      if (response.ok) {
+        const user = await response.json();
+        authenticateUser(user);
+      } else {
+        throw new Error("Invalid Credentials");
+      }
     } catch (error) {
       console.error(error);
     }
   };
 
-  
-
   return (
+
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
@@ -89,7 +88,7 @@ const Login = () => {
                     className="form-radio" 
                     name="passwordOption" value="forgot" 
                     checked={forgotPassword} 
-                    onChange={() => setForgotPassword(!forgotPassword)} 
+                    onChange={() => toggleForgotPassword(!forgotPassword)} 
                     />
                     <Link to="/PasswordResetForm" className="ml-2">Forgot Password?</Link>
                   </label>
@@ -102,5 +101,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

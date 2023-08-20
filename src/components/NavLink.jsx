@@ -18,7 +18,7 @@ const NavLink = () => {
           Reports
         </Link>
           <div className="ml-4 flex flex-col items-start space-y-2">
-            <Link to="/sub-report-1">Sub Report 1</Link>
+            <Link to="/EmployeeSalaryReport">Employee Salary Report</Link>
             <Link to="/sub-report-2">Sub Report 2</Link>
             <Link to="/sub-report-3">Sub Report 3</Link>
           </div>

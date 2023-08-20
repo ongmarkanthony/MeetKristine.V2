@@ -14,31 +14,33 @@ const LeaveCredits = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch("/api/user");
-        const data = await response.json();
-        setUser(data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
+const fetchUserData = () => {
+  axios.get("http://localhost:8000/api/v1/users")
+    .then(response => {
+      const data = response.data;
+      setUser(data);
+    })
+    .catch(error => {
+      console.error("Error fetching user data:", error);
+    });
+};
 
     fetchUserData();
   }, []);
 
   useEffect(() => {
-    const fetchUsedLeaves = async () => {
-      try {
-        if (user) {
-          const response = await fetch(`/api/leaveCredits/${user.id}`);
-          const data = await response.json();
-          setUsedLeaves(data);
-        }
-      } catch (error) {
-        console.error("Error fetching used leave credits:", error);
-      }
-    };
+const fetchUsedLeaves = async () => {
+  try {
+    if (user) {
+      const url = `http://localhost:8000/api/v1/leave-credits/${user.id}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setUsedLeaves(data);
+    }
+  } catch (error) {
+    console.error("Error fetching used leave credits:", error);
+  }
+};
 
     fetchUsedLeaves();
   }, [user]);
@@ -52,7 +54,7 @@ const LeaveCredits = () => {
   }, [usedLeaves]);
 
   return (
-    <div className="flex justify-start flex-col h-full">
+    <div className="flex justify-start flex-col min-w-full h-full">
       <h1 className="text-xl font-bold mb-2 md:text-xl ">Leave Credits</h1>
       <div className="text-lg md:text-lg p-2">
         Available Leave Credits:

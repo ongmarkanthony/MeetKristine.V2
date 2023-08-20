@@ -1,33 +1,51 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import { useState } from "react";
 
-const PerformanceRatingDistribution = () => {
-  const data = {
-    labels: [
-      "Exceptional",
-      "Exceeds Expectations",
-      "Meets Expectations",
-      "Below Expectations",
-      "Unsatisfactory"
-    ],
-    datasets: [
-      {
-        label: "Performance Rating Distribution",
-        data: [20, 35, 40, 4, 1],
-        fill: false,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)"
-      }
-    ]
-  };
+const PerformanceRatings = () => {
+  const [ratings, setRatings] = useState({
+    needsImprovement: 3,
+    belowExpectations: 8,
+    satisfactory: 52,
+    aboveExpectations: 30,
+    outstanding: 7,
+  });
 
   return (
-    <div className="mt-3">
-      <h1 className="text-2xl font-semibold text-center mb-6">Performance Rating Distribution</h1>
-      <Line data={data} />
+    <div className="flex flex-col items-center">
+      <h2 className="text-2xl font-bold mb-4">Performance Rating Distribution</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="flex items-center justify-center bg-red-500 text-white p-4 rounded-md">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Needs Improvement</h3>
+            <p className="text-2xl">{ratings.needsImprovement}%</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center bg-orange-500 text-white p-4 rounded-md">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Below Expectations</h3>
+            <p className="text-2xl">{ratings.belowExpectations}%</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center bg-yellow-500 text-white p-4 rounded-md">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Satisfactory</h3>
+            <p className="text-2xl">{ratings.satisfactory}%</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center bg-green-500 text-white p-4 rounded-md">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Above Expectations</h3>
+            <p className="text-2xl">{ratings.aboveExpectations}%</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-center bg-blue-500 text-white p-4 rounded-md">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Outstanding</h3>
+            <p className="text-2xl">{ratings.outstanding}%</p>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-  
+  );
 };
 
-export default PerformanceRatingDistribution;
+export default PerformanceRatings;
