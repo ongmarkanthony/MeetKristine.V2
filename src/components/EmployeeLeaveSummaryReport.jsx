@@ -4,11 +4,9 @@ const EmployeeLeaveSummaryReport = () => {
   const [report, setReport] = useState([]);
 
   const fetchReport = async () => {
-    // Fetch the report from the API and update the state
-    // Uncomment and replace the URL with your API
-    // const response = await fetch('https://your-api.com/report');
-    // const data = await response.json();
-    // setReport(data);
+    const response = await fetch('http://localhost:8000/api/v1/users');
+    const data = await response.json();
+    setReport(data);
   };
 
   return (

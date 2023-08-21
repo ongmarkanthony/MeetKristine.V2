@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from 'axios';
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -50,8 +51,8 @@ const Table = ({ rows }) => {
 };
 
 const TimeTracker = () => {
-  const [timeIn, setTimeIn] = useState("");
-  const [timeOut, setTimeOut] = useState("");
+  const [timeIn, setTimeIn] = useState(null);
+  const [timeOut, setTimeOut] = useState(null);
   const [isTimeIn, setIsTimeIn] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [records, setRecords] = useState([]);
@@ -67,28 +68,34 @@ const TimeTracker = () => {
   }, []);
 
   const handleTimeIn = () => {
-    const currentTimeIn = new Date().toLocaleTimeString();
+    const currentTimeIn = new Date();
     setTimeIn(currentTimeIn);
     setIsTimeIn(true);
     setRecords((prevRecords) => [
       ...prevRecords,
       {
         date: currentDate.toLocaleDateString(),
-        timeIn: currentTimeIn,
+        timeIn: currentTimeIn.toLocaleTimeString(),
         timeOut: "",
+        totalHours: ""
       },
     ]);
+    axios.post('http://backend-url/time-in', {date: currentDate.toLocaleDateString(), timeIn: currentTimeIn.toLocaleTimeString()});
   };
 
   const handleTimeOut = () => {
-    const currentTimeOut = new Date().toLocaleTimeString();
+    const currentTimeOut = new Date();
     setTimeOut(currentTimeOut);
     setIsTimeIn(false);
     setRecords((prevRecords) => {
       const updatedRecords = [...prevRecords];
-      updatedRecords[updatedRecords.length - 1].timeOut = currentTimeOut;
+      const timeIn = new Date(updatedRecords[updatedRecords.length - 1].timeIn);
+      const totalHours = (currentTimeOut - timeIn) / (1000 * 60 * 60);
+      updatedRecords[updatedRecords.length - 1].timeOut = currentTimeOut.toLocaleTimeString();
+      updatedRecords[updatedRecords.length - 1].totalHours = totalHours.toFixed(2);
       return updatedRecords;
     });
+    axios.post('http://backend-url/time-out', {date: currentDate.toLocaleDateString(), timeOut: currentTimeOut.toLocaleTimeString()});
   };
 
   return (
@@ -116,7 +123,7 @@ const TimeTracker = () => {
           Time Out
         </button>
         <div className="text-xl sm:text-2xl font-semibold text-center">
-          {isTimeIn ? "Time In: " + timeIn : "Time Out: " + timeOut}
+        {isTimeIn ? "Time In: " + (timeIn ? timeIn.toLocaleTimeString() : "") : "Time Out: " + (timeOut ? timeOut.toLocaleTimeString() : "")}
         </div>
         <Table rows={records} />
       </div>

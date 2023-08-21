@@ -1,7 +1,7 @@
 import React from 'react'
-import FileUpload from '../components/FileUpload'
 import UserFooter from '../components/UserFooter'
 import Sidebar from '../components/Sidebar'
+import FileUpload from '../components/FileUpload'
 
 const Documents = () => {
   return (
@@ -9,7 +9,7 @@ const Documents = () => {
     <div className="flex flex-col min-h-screen justify-between">
       <div className="flex flex-col sm:flex-row flex-grow">
         <Sidebar />
-        <FileUpload/>
+        <FileUpload/> 
       </div>
       <UserFooter />
       </div>

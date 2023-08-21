@@ -41,7 +41,7 @@ const AddUser = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-5 grid-rows-5 gap-4 max-w-screen-xs m-10 rounded-lg">
-      <div className="col-span-1 sm:col-span-3 row-span-5 sm:col-start-2 shadow-md rounded-lg px-20 pt-8 pb-10 mb-6 bg-blue-500 border-black border-2">
+      <div className="col-span-1 sm:col-span-3 row-span-5 sm:col-start-2 shadow-md rounded px-20 pt-8 pb-10 mb-6 bg-blue-500 border-black border-2">
         <div className="flex flex-col p-4 rounded-lg mx-auto ">
           <form onSubmit={formik.handleSubmit} className="flex flex-col h-3/4">
             <label className="mb-1">First Name</label>
@@ -49,7 +49,7 @@ const AddUser = () => {
               name="firstName"
               value={formik.values.firstName}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     First Name"
             />
             <label className="mb-1">Last Name</label>
@@ -57,7 +57,7 @@ const AddUser = () => {
               name="lastName"
               value={formik.values.lastName}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Last Name"
             />
             <label className="mb-1">Email</label>
@@ -66,7 +66,7 @@ const AddUser = () => {
               type="email"
               value={formik.values.email}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Email"
             />
             <label className="mb-1">Password</label>
@@ -74,7 +74,7 @@ const AddUser = () => {
               name="password"
               value={formik.values.password}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Password"
             />
             <label className="mb-1">Job Title</label>
@@ -82,14 +82,14 @@ const AddUser = () => {
               name="jobTitle"
               value={formik.values.jobTitle}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Job Title"
             />
             <label className="mb-1">Department</label>
             <select
               value={role}
               onChange={handleDepartmentChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
             >
               <option value="Human Resources">Human Resources</option>
               <option value="IT">IT</option>
@@ -102,19 +102,19 @@ const AddUser = () => {
               name="employeeId"
               value={formik.values.employeeId}
               onChange={formik.handleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Employee ID"
             />
             <label className="mb-1">Role</label>
             <select
               value={role}
               onChange={handleRoleChange}
-              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-full text-gray-900 focus:outline-none focus:border-rose-600"
+              className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
             >
               <option value="User">User</option>
               <option value="Admin">Admin</option>
             </select>
-            <button type="submit" className="bg-cyan-50 w-1/4 h-12 mt-4 rounded-full">
+            <button type="submit" className="bg-cyan-50 w-1/4 h-12 mt-4 rounded-lg">
               Add User
             </button>
           </form>

@@ -34,9 +34,6 @@ const FileUpload = () => {
             <div className="flex items-center justify-center w-full">
               <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
                 <div className="h-full w-full text-center flex flex-col items-center justify-center">
-                  <div className="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
-                    <img className="absolute clip-[rect(10px,150px,130px,10px)] h-36" src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg" alt="Upload" />
-                  </div>
                   <p className="pointer-none text-gray-500 ">
                     <span className="text-sm">Drag and drop</span> files here <br /> or <a href="#" className="text-blue-600 hover:underline">select a file</a> from your computer
                   </p>

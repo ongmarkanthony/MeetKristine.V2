@@ -21,6 +21,9 @@ import UpdatePassword from "./components/UpdatePassword";
 import NewPassword from "./components/UpdatePassword";
 import ProfileInfoForm from "./components/ProfileInfoForm";
 import SalaryReport from "./pages/SalaryReport";
+import FileUpload from "./components/FileUpload";
+import EmployeeInformationReport from "./pages/EmployeeInfoReport";
+import EmpInfoReport from "./components/EmpInfoReport";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -47,7 +50,10 @@ const App = () => {
         <Route path="/UpdatePassword" element ={<UpdatePassword />} />
         <Route path="/PasswordResetForm" element={<NewPassword />} />
         <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
-        <Route path="SalaryReport" element={<SalaryReport />} />
+        <Route path="/SalaryReport" element={<SalaryReport />} />
+        <Route path="/FileUplaods" element={<FileUpload />} />
+        <Route path="/EmployeeInfoReport" element={<EmployeeInformationReport />} />
+        <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
 
 
       </Routes>
