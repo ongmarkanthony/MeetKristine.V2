@@ -8,6 +8,10 @@ import UserFooter from "../components/UserFooter";
 import Sidebar from "../components/Sidebar";
 
 const UserProfile = () => {
+  const handleSubmit = (values) => {
+    alert(JSON.stringify(values, null, 2));
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -57,10 +61,6 @@ const UserProfile = () => {
     }),
     onSubmit: handleSubmit,
   });
-
-  const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
-  };
 
   return (
     <div className="flex h-screen w-full bg-gray-100">
