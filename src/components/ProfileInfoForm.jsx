@@ -58,7 +58,7 @@ const ProfileInfoForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-    `    <h2 className="mb-4 text-xl font-bold">Profile Info</h2>
+        <h2 className="mb-4 text-xl font-bold">Profile Info</h2>
         <div className="flex flex-wrap -mx-3 md:flex mb-6">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="firstName">
@@ -139,6 +139,9 @@ const ProfileInfoForm = () => {
                 {...formik.getFieldProps('department')}
                 />
               </div>
+              <button type = "submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save Update 
+              </button>
             </div>
         </form>
  );
