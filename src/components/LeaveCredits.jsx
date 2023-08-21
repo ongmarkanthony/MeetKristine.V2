@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const LeaveCredits = () => {
@@ -15,7 +16,7 @@ const LeaveCredits = () => {
 
   useEffect(() => {
 const fetchUserData = () => {
-  axios.get("http://localhost:8000/api/v1/users")
+  axios.get("")
     .then(response => {
       const data = response.data;
       setUser(data);
@@ -32,7 +33,7 @@ const fetchUserData = () => {
 const fetchUsedLeaves = async () => {
   try {
     if (user) {
-      const url = `http://localhost:8000/api/v1/leave-credits/${user.id}`;
+      const url = `http://localhost:8000/api/v1/users/${user.id}`;
       const response = await fetch(url);
       const data = await response.json();
       setUsedLeaves(data);

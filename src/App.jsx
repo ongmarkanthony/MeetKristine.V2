@@ -19,6 +19,7 @@ import PerformanceRatings from "./components/PerformanceRating";
 import PerDepartmentReport from "./components/PerDepartmentReport";
 import UpdatePassword from "./components/UpdatePassword";
 import NewPassword from "./components/UpdatePassword";
+import ProfileInfoForm from "./components/ProfileInfoForm";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -43,7 +44,8 @@ const App = () => {
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/PerDepartmentReport" element={<PerDepartmentReport />} />
         <Route path="/UpdatePassword" element ={<UpdatePassword />} />
-        <Route path ="/PasswordResetForm" element={<NewPassword />} />
+        <Route path="/PasswordResetForm" element={<NewPassword />} />
+        <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
 
 
       </Routes>
