@@ -5,7 +5,7 @@ import ProfileInfoForm from "../components/ProfileInfoForm";
 import AddressInfoForm from "../components/AddressInfoForm";
 import OtherInfoForm from "../components/OtherInfoForm";
 import UserFooter from "../components/UserFooter";
-import MainSidebar from "../components/GlobalSidebar";
+import Sidebar from "../components/Sidebar";
 
 const UserProfile = () => {
   const formik = useFormik({
@@ -65,7 +65,7 @@ const UserProfile = () => {
   return (
     <div className="flex h-screen w-full bg-gray-100">
       <div className="w-full md:w-80 flex-shrink-0">
-        <MainSidebar/>
+        <Sidebar />
       </div>
       <div className="flex flex-col h-screen bg-white p-4 shadow-lg w-full overflow-auto">
         <ProfileInfoForm formik={formik} />

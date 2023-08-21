@@ -1,12 +1,12 @@
 import React from "react";
 import AdminDBMainContent from "../components/AdminDBMainContent";
-import MainSidebar from "../components/GlobalSidebar";
+import Sidebar from "../components/Sidebar";
 
 const AdminDashboard = () => {
   return (
     <div className="flex">
       <div className="sidebar">
-        <MainSidebar />
+        <Sidebar />
       </div>
       <AdminDBMainContent />
     </div>

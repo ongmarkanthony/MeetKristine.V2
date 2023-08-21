@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { authenticateUser } from "../utils/userAuth";
 
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/v1/users", {
-        method: "POST", // Use POST method for sending login credentials
+        method: "GET", // Use POST method for sending login credentials
         headers: {
           "Content-Type": "application/json",
         },
@@ -66,7 +67,7 @@ const Login = () => {
                     id="password"
                     name="password"
                     type="password"
-                    className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                    className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                     placeholder="Password"
                   />
                   <label
@@ -88,7 +89,7 @@ const Login = () => {
                     className="form-radio" 
                     name="passwordOption" value="forgot" 
                     checked={forgotPassword} 
-                    onChange={() => toggleForgotPassword(!forgotPassword)} 
+                    onChange={toggleForgotPassword}
                     />
                     <Link to="/PasswordResetForm" className="ml-2">Forgot Password?</Link>
                   </label>
