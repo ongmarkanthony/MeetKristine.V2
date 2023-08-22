@@ -1,6 +1,5 @@
 import React from "react";
 import AdminDBMainContent from "../components/AdminDBMainContent";
-import Sidebar from "../components/Sidebar";
 import { NavLink } from "react-router-dom";
 
 const AdminDashboard = () => {

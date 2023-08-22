@@ -1,14 +1,14 @@
 import React from 'react'
 import TimeTracker from '../components/TimeTracker'
 import UserFooter from '../components/UserFooter'
-import Sidebar from '../components/Sidebar'
+import NavLink from '../components/NavLink'
 
 
 const BundyClock = () => {
   return (
     <div className="flex flex-col min-h-screen justify-between bg-gray-100">
       <div className="flex flex-col sm:flex-row flex-grow">
-        <Sidebar />
+        <NavLink />
         <TimeTracker/>
       </div>
       <UserFooter />
