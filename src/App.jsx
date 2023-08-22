@@ -27,12 +27,20 @@ import UserManagement from "./pages/UserManagement";
 import BundyClock from "./pages/BundyClock";
 import EmployeeLeaveReport from "./components/EmployeeLeaveSummaryReport";
 import TimeTracker from "./components/TimeTracker";
+import EmployeePerDepartment from "./components/PerDepartmentReport";
+import store from "./store/store";
+import {Provider} from "react-redux";
+import NavLink from "./components/NavLink";
 
 const App = () => {
-  const [loggedInUserRole, setLoggedInUserRole] = useState("");
+  const [loggedInUserRole, setLoggedInUserRole] = useState("admin");
 
   return (
+    <Provider store={store}>
     <BrowserRouter>
+      <nav>
+        <NavLink userRole={loggedInUserRole}/>
+      </nav>
       <Routes>
         <Route path="/Login" element={<LoginPage />} />
         <Route path="/UserProfile" element={<UserProfile />} />
@@ -60,8 +68,10 @@ const App = () => {
         <Route path= "/UserManagement" element={<UserManagement />} />
         <Route path="/EmployeeLeaveSummaryReport" element={<EmployeeLeaveReport />} />
         <Route path="/TimeTracker" element={<TimeTracker />} />
+        <Route path="/EmployeePerDepartment" element={<EmployeePerDepartment />} />
       </Routes>
     </BrowserRouter>
+    </Provider>
   );
 };
 
