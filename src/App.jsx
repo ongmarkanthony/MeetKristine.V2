@@ -26,6 +26,7 @@ import EmpInfoReport from "./components/EmpInfoReport";
 import UserManagement from "./pages/UserManagement";
 import BundyClock from "./pages/BundyClock";
 import EmployeeLeaveReport from "./components/EmployeeLeaveSummaryReport";
+import TimeTracker from "./components/TimeTracker";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -53,14 +54,12 @@ const App = () => {
         <Route path="/PasswordResetForm" element={<NewPassword />} />
         <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
         <Route path="/SalaryReport" element={<SalaryReport />} />
-        <Route path="/FileUplaods" element={<FileUpload />} />
+        <Route path="/FileUpload" element={<FileUpload />} />
         <Route path="/EmployeeInformationReport" element={<EmployeeInformationReport />} />
         <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
         <Route path= "/UserManagement" element={<UserManagement />} />
         <Route path="/EmployeeLeaveSummaryReport" element={<EmployeeLeaveReport />} />
-
-
-
+        <Route path="/TimeTracker" element={<TimeTracker />} />
       </Routes>
     </BrowserRouter>
   );

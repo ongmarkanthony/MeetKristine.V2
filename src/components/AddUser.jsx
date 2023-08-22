@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const AddUser = () => {
   const [role, setRole] = useState('User');
+  const [department, setDepartment] = useState('');
 
   const formik = useFormik({
     initialValues: {
@@ -87,7 +88,7 @@ const AddUser = () => {
             />
             <label className="mb-1">Department</label>
             <select
-              value={role}
+              value={department}
               onChange={handleDepartmentChange}
               className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
             >

@@ -13,7 +13,7 @@ const Sidebar = () => {
         <div className=" p-2 text-gray-950">
         <ProfilePhoto />
       </div>
-      <div className=" p-2 text-gray-950 h-60 w-screen">
+      <div className=" p-2 text-gray-950 h-60">
         <NavLink/>
       </div>
 
