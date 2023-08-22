@@ -7,7 +7,6 @@ import "./index.css";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "./pages/Documents";
-import ReportDashBoard from "./pages/ReportDashBoard";
 import EmployeeDirectory from "./pages/EmployeeDirectory";
 import ApprovalPage from "./pages/ApprovalPage";
 import AddUser from "./components/AddUser";
@@ -49,7 +48,6 @@ const App = () => {
         <Route path="/TimeOff" element={<TimeOff />} />
         <Route path="/Documents" element={<Documents />} />
         <Route path="/Management" element={<Management />} />
-        <Route path="/ReportDashBoard" element={<ReportDashBoard />} />
         <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
         <Route path="/Approval" element={<ApprovalPage />} />
         <Route path="/AddUser" element={<AddUser />} />
