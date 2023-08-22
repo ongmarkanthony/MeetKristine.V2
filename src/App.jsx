@@ -37,9 +37,6 @@ const App = () => {
   return (
     <Provider store={store}>
     <BrowserRouter>
-      <nav>
-        <NavLink userRole={loggedInUserRole}/>
-      </nav>
       <Routes>
         <Route path="/Login" element={<LoginPage />} />
         <Route path="/UserProfile" element={<UserProfile />} />

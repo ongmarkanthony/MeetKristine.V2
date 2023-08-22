@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import axiosInstance from '../store/api';
 
 const AddUser = () => {
   const [role, setRole] = useState('User');
@@ -13,17 +14,23 @@ const AddUser = () => {
       email: '',
       password: '',
       jobTitle: '',
-      department: '',
-      employeeId: generateEmployeeId(),
+      department: department,
+      employee_num: generateEmployeeId(),
     },
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://localhost:8000/api/v1/users', { ...values, role });
-        if (response.status === 200) {
+        const response = await axiosInstance.post('/users', { ...values, role });
+        console.log(response.data.data)
+        if (response.status === 201) {
           console.log('User added successfully');
         }
       } catch (error) {
         console.error('Error adding user', error);
+        if (error.response) {
+          console.log('Response data:', error.response.data);
+          console.log('Response status:', error.response.status);
+          console.log('Response headers:', error.response.headers);
+        }
       }
     },
   });
@@ -101,7 +108,7 @@ const AddUser = () => {
             <label className="mb-1">Employee ID</label>
             <input
               name="employeeId"
-              value={formik.values.employeeId}
+              value={formik.values.employee_num}
               onChange={formik.handleChange}
               className="form-input mb-3 h-12 w-full  border-b-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-rose-600"
               placeholder="     Employee ID"
