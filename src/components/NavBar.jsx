@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const NavLink = () => {
+const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userRole, setUserRole] = useState("Admin");
 
@@ -78,10 +78,10 @@ const NavLink = () => {
             <a href="./EmployeeDirectory">Employee Directory</a>
           </li>
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./AdminDashboard">Admin Dashboard</a>
+            <a href="./UserDashboard">AdminDashboard</a>
             </li>
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./Reports">Reports</a>
+            <a href="./UserProfile">Reports</a>
             <ul className="pl-4"> 
             <li className="py-1 text-white hover:bg-blue-600">
             <a href="./Subpage1">Subpage 1</a>
@@ -90,15 +90,15 @@ const NavLink = () => {
             <a href="./Subpage2">Subpage 2</a>
             </li>
             <li className="py-1 text-white hover:bg-blue-600">
-            <a href="./Subpage3">Subpage 3</a>
+            <a href="./Subpage2">Subpage 3</a>
             </li>
             <li className="py-1 text-white hover:bg-blue-600">
-             <a href="./Subpage4">Subpage 4</a>
+             <a href="./Subpage2">Subpage 4</a>
             </li>
             </ul>
             </li>
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-           <a href="./UserManagement">User Management</a>
+            <a href="./BundyClock"> User Management</a>
             </li>
             </ul> 
         )}
@@ -110,5 +110,4 @@ const NavLink = () => {
   );
 };
 
-
-export default NavLink;
+export default Sidebar;

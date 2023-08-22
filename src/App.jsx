@@ -29,7 +29,6 @@ import TimeTracker from "./components/TimeTracker";
 import EmployeePerDepartment from "./components/PerDepartmentReport";
 import store from "./store/store";
 import {Provider} from "react-redux";
-import NavLink from "./components/NavLink";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("admin");
