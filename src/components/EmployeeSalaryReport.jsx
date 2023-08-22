@@ -62,7 +62,7 @@ const EmployeeSalaryReport = () => {
                 <td className="px-6 py-4 whitespace-nowrap">{employee.lastName}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{employee.jobTitle}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{employee.department}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{employee.salaries}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{employee.salary_amount}</td>
               </tr>           
                ))}
           </tbody>

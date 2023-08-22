@@ -22,10 +22,10 @@ const WorkForceDistribution = () => {
   ]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center  h-1/2">
       <h1 className="text-2xl font-bold mb-4">Workforce Distribution</h1>
       <div className="w-1/2">
-        <h2 className="text-2xl font-bold mb-4">Age Distribution</h2>
+        <h2 className="text-2xl font-bold mb-4">Age</h2>
         {ageData.map((data) => (
           <div
             key={data.age}
@@ -40,7 +40,7 @@ const WorkForceDistribution = () => {
         ))}
       </div>
       <div className="w-1/2 mt-8">
-        <h2 className="text-2xl font-bold mb-4">Gender Distribution</h2>
+        <h2 className="text-2xl font-bold mb-4">Gender</h2>
         {genderData.map((data) => (
           <div
             key={data.gender}
@@ -55,7 +55,7 @@ const WorkForceDistribution = () => {
         ))}
       </div>
       <div className="w-1/2 mt-8">
-        <h2 className="text-2xl font-bold mb-4">Location Distribution</h2>
+        <h2 className="text-2xl font-bold mb-4">Location</h2>
         {locationData.map((data) => (
           <div
             key={data.location}

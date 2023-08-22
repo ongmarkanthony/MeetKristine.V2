@@ -16,7 +16,7 @@ const LeaveCredits = () => {
 
   useEffect(() => {
 const fetchUserData = () => {
-  axios.get("")
+  axios.get("http://localhost:8000/api/v1/users")
     .then(response => {
       const data = response.data;
       setUser(data);

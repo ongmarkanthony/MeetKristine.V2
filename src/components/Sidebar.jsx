@@ -6,14 +6,14 @@ import NavLink from './NavLink'
 const Sidebar = () => {
 
   return (
-    <div className="relative flex flex-col border w-64">
-        <div className="bg-blue-500 p-2 text-gray-950"> 
+    <div className="relative flex flex-col border w-64 bg-blue-500 h-screen">
+        <div className=" p-2 text-gray-950"> 
         <UserHeader />
         </div>
-        <div className="bg-red-500 p-2 text-white">
+        <div className=" p-2 text-gray-950">
         <ProfilePhoto />
       </div>
-      <div className="bg-green-500 p-2 text-white h-3/4">
+      <div className=" p-2 text-gray-950 h-60 w-screen">
         <NavLink/>
       </div>
 

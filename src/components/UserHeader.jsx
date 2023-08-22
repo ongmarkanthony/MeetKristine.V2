@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Header = ({ firstName, userAvatar }) => {
+const Header = ({ firstName}) => {
   return (
     <header className="p-4 bg-blue-500 text-white flex flex-row justify-between items-center">
       <h6 className="text-xl font-bold">Welcome, {firstName}!</h6>
@@ -12,7 +12,6 @@ const UserHeader = () => {
   const [firstName, setFirstName] = useState("");
 
   useEffect(() => {
-    // Fetch the firstName from the backend API and set it to the state
     fetch(" http://localhost:8000/api/v1/users")
       .then((response) => response.json())
       .then((data) => setFirstName(data.firstName))

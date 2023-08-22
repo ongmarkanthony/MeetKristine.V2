@@ -7,11 +7,10 @@ import "./index.css";
 import UserProfile from "./pages/UserProfile";
 import TimeOff from "./pages/TimeOff";
 import Documents from "./pages/Documents";
-import BundyClock from "./pages/bundyClock";
 import ReportDashBoard from "./pages/ReportDashBoard";
 import EmployeeDirectory from "./pages/EmployeeDirectory";
 import ApprovalPage from "./pages/ApprovalPage";
-import AddUser from "./pages/AddUser";
+import AddUser from "./components/AddUser";
 import UserDashboard from "./pages/UserDashboard";
 import PasswordResetForm from "./components/PasswordResetForm";
 import EmployeeSalaryReport from "./components/EmployeeSalaryReport";
@@ -24,6 +23,8 @@ import SalaryReport from "./pages/SalaryReport";
 import FileUpload from "./components/FileUpload";
 import EmployeeInformationReport from "./pages/EmployeeInfoReport";
 import EmpInfoReport from "./components/EmpInfoReport";
+import UserManagement from "./pages/UserManagement";
+import BundyClock from "./pages/BundyClock";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -54,6 +55,8 @@ const App = () => {
         <Route path="/FileUplaods" element={<FileUpload />} />
         <Route path="/EmployeeInfoReport" element={<EmployeeInformationReport />} />
         <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
+        <Route path= "/UserManagement" element={<UserManagement />} />
+
 
 
       </Routes>

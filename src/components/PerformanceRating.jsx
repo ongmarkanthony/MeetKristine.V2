@@ -10,13 +10,13 @@ const PerformanceRatings = () => {
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center h-1/2">
       <h2 className="text-2xl font-bold mb-4">Performance Rating Distribution</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <div className="flex items-center justify-center bg-red-500 text-white p-4 rounded-md">
           <div>
             <h3 className="text-xl font-bold mb-2">Needs Improvement</h3>
-            <p className="text-2xl">{ratings.needsImprovement}%</p>
+            <p className="text-xl">{ratings.needsImprovement}%</p>
           </div>
         </div>
         <div className="flex items-center justify-center bg-orange-500 text-white p-4 rounded-md">

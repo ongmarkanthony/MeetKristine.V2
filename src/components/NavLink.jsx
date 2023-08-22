@@ -19,10 +19,11 @@ const NavLink = () => {
           <div className="ml-4 flex flex-col items-start space-y-2">
             <Link to="/EmployeeSalaryReport">Employee Salary Report</Link>
             <Link to="/EmployeeInfoReport">Employee Information Report</Link>
-            <Link to="/sub-report-3">Sub Report 3</Link>
+            <Link to="/PerDepartmentReport">Employee Per Department</Link>
+            <Link to="/EmpLeaveCredit">Employee Leave Report</Link>
           </div>
-        <Link to="/AddUser">Add User</Link>
-        <Link to="/LoginPage">Log Out</Link>
+        <Link to="/UserManagement">User Management</Link>
+        <Link to="/Login">Log Out</Link>
       </div>
     </>
   );

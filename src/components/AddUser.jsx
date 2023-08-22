@@ -17,7 +17,7 @@ const AddUser = () => {
     },
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('/api/addUser', { ...values, role });
+        const response = await axios.post('http://localhost:8000/api/v1/users', { ...values, role });
         if (response.status === 200) {
           console.log('User added successfully');
         }
