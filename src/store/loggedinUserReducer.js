@@ -1,27 +1,7 @@
-const initialState = {
-    user: null,
-    isLoggedIn: false,
-  };
-  
-  // Define action types
-  const LOGIN = 'LOGIN';
-  const LOGOUT = 'LOGOUT';
-  
-  // Define the reducer function
-  const loggedInUserReducer = (state = initialState, action) => {
+const loggedInUserReducer = (state = false, action) => {
     switch (action.type) {
-      case LOGIN:
-        return {
-          ...state,
-          user: action.payload,
-          isLoggedIn: true,
-        };
-      case LOGOUT:
-        return {
-          ...state,
-          user: null,
-          isLoggedIn: false,
-        };
+      case "SET_LOGGED_IN_USER":
+        return action.payload;
       default:
         return state;
     }

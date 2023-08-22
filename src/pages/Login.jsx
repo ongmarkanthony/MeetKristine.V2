@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { authenticateUser } from "../utils/userAuth";
 import { useDispatch, useSelector } from "react-redux";
-
+import { setLoggedInUser } from "../store/loggedInUserAction";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -10,18 +10,18 @@ const Login = () => {
   const [forgotPassword, setForgotPassword] = useState(false);
 
   const dispatch = useDispatch();
-  const toggleForgotPassword = () => {
-    setForgotPassword((prevForgotPassword) => !prevForgotPassword);
-  };
+  // const toggleForgotPassword = () => {
+  //   setForgotPassword((prevForgotPassword) => !prevForgotPassword);
+  // };
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/v1/users", {
-        method: "POST", // Use POST method for sending login credentials
+      const response = await fetch("http://localhost:8000/api/v1/login", {
+        method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         body: JSON.stringify({ username, password }),
       });
@@ -29,6 +29,7 @@ const Login = () => {
       if (response.ok) {
         const user = await response.json();
         authenticateUser(user);
+        dispatch(setLoggedInUser(true));
         setIsLoggedIn(true);
       } else {
         throw new Error("Invalid Credentials");
@@ -37,6 +38,15 @@ const Login = () => {
       console.error(error);
     }
   };
+
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedInUser) {
+      navigate('/UserDashboard');
+    }
+  }, [loggedInUser]);
 
   return (
       <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -87,7 +97,9 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="relative">
-                  <button type ="submit" className="bg-blue-500 text-white rounded-md px-2 py-1">
+                  <button type ="submit" 
+                  onClick = {handleLogin}
+                  className="bg-blue-500 text-white rounded-md px-2 py-1">
                     Submit
                   </button>
                   </div>
@@ -95,7 +107,7 @@ const Login = () => {
                   </div>
                 </form>
                 </div>
-                <div className="relative">
+                {/* <div className="relative">
                   <label className="inline-flex items-center">
                     <input 
                     type="radio" 
@@ -105,9 +117,8 @@ const Login = () => {
                     onChange={toggleForgotPassword}
                     />
                     <Link to="/PasswordResetForm" className="ml-2">Forgot Password?</Link>
-                  </label>
+                  </label> */}
 
-                </div>
               </div>
             </div>
           </div>
