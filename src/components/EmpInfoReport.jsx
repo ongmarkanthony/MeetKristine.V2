@@ -9,7 +9,7 @@ const EmployeeInfo = ({ employee }) => {
       <div className="text-lg font-semibold">{firstName} {lastName}</div>
       <div className="text-gray-500">{jobTitle}, {department}</div>
       <div className="text-sm">{gender}, {nationality}</div>
-      <div className="text-sm">Country: {country}</div>
+      <div className="text-sm">{country}</div>
     </div>
   );
 };
@@ -23,7 +23,7 @@ const EmpInfoReport = () => {
   }, []);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 flex flex-col">
       {employees.map((employee) => (
         <EmployeeInfo key={employee.employeeID} employee={employee} />
       ))}

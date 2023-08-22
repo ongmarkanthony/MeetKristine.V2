@@ -12,20 +12,20 @@ const validationSchema = Yup.object({
   postalCode: Yup.string().required('Required'),
 });
 
-const fetchUser = async () => {
-  const response = await axios.get('http://localhost:8000/api/v1/users/${userId}');
+const fetchUser = async (userId) => {
+  const response = await axios.get(`http://localhost:8000/api/v1/users/${userId}`);
   return response.data.data;
 };
 
-const updateUser = async (values) => {
-  const response = await axios.post('http://localhost:8000/api/v1/users/${userId}', values);
+const updateUser = async (userId, values) => {
+  const response = await axios.put(`http://localhost:8000/api/v1/users/${userId}`, values);
   return response.data.data;
 }
 
   
 
 const AddressInfoForm = () => {
-  const [userId, setUserId] = useState('');
+  const [userId, setUserId] = useState('someUserId');
 
   const formik = useFormik({
     initialValues: {
@@ -38,8 +38,8 @@ const AddressInfoForm = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://localhost:8000/api/v1/users', values);
-        console.log(response.data.data);
+        const response = await updateUser(userId, values);
+        console.log(response);
       } catch (error) {
         console.error(error);
       }
@@ -48,10 +48,9 @@ const AddressInfoForm = () => {
 
   useEffect(() => {
     if (userId) {
-      fetchUser(userId).then(user  => formik.setValues(user)); {
-      }
+      fetchUser(userId).then(user  => formik.setValues(user)); 
     }
-  })
+  }, [userId]);
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
     <div className="-mx-3 md:flex mb-6">
@@ -114,7 +113,8 @@ const AddressInfoForm = () => {
          type="text" placeholder="Postal Code" 
          {...formik.getFieldProps('postalCode')}
          />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1 align-text-bottom">
+        <button type="submit" 
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1 align-text-bottom">
           Save Update
           </button>
             </div>

@@ -25,6 +25,7 @@ import EmployeeInformationReport from "./pages/EmployeeInfoReport";
 import EmpInfoReport from "./components/EmpInfoReport";
 import UserManagement from "./pages/UserManagement";
 import BundyClock from "./pages/BundyClock";
+import EmployeeLeaveReport from "./components/EmployeeLeaveSummaryReport";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("");
@@ -37,7 +38,7 @@ const App = () => {
         <Route path="/UserDashboard" element={<UserDashboard />} />
         <Route path="/BundyClock" element={<BundyClock />} />
         <Route path="/TimeOff" element={<TimeOff />} />
-        <Route path="/Document" element={<Documents />} />
+        <Route path="/Documents" element={<Documents />} />
         <Route path="/Management" element={<Management />} />
         <Route path="/ReportDashBoard" element={<ReportDashBoard />} />
         <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
@@ -53,9 +54,10 @@ const App = () => {
         <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
         <Route path="/SalaryReport" element={<SalaryReport />} />
         <Route path="/FileUplaods" element={<FileUpload />} />
-        <Route path="/EmployeeInfoReport" element={<EmployeeInformationReport />} />
+        <Route path="/EmployeeInformationReport" element={<EmployeeInformationReport />} />
         <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
         <Route path= "/UserManagement" element={<UserManagement />} />
+        <Route path="/EmployeeLeaveSummaryReport" element={<EmployeeLeaveReport />} />
 
 
 

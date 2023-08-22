@@ -41,6 +41,7 @@ const ProfileInfoForm = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
+        await updateUser(userId, values);
         const response = await axios.post('http://localhost:8000/api/v1/users', values);
         console.log(response.data.data);
       } catch (error) {
@@ -54,7 +55,7 @@ const ProfileInfoForm = () => {
        fetchUser(userId).then(user  => formik.setValues(user)); {
        }
      }
-   })              
+   }, [userId]);              
 
   return (
     <form onSubmit={formik.handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -66,7 +67,9 @@ const ProfileInfoForm = () => {
                 </label>
                 <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" 
                 id="firstName" 
-                type="text" placeholder="Jane" 
+                type="text" 
+                placeholder="Jane" 
+                value={formik.values.firstName}
                 {...formik.getFieldProps('firstName')} />
               </div>
               <div className="w-full md:w-1/3 px-3">
@@ -75,6 +78,7 @@ const ProfileInfoForm = () => {
                 </label>
                 <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="middleName" 
                 type="text" placeholder="Doe" 
+                value={formik.values.middleName}
                 {...formik.getFieldProps('middleName')} />
               </div>
               <div className="w-full md:w-1/3 px-3">
@@ -84,6 +88,7 @@ const ProfileInfoForm = () => {
                 <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
                  id="lastName"
                   type="text" placeholder="Smith" 
+                  value={formik.values.lastName}
                   {...formik.getFieldProps('lastName')} />
               </div>
               <div className="w-full md:w-1/3 px-3">
@@ -93,6 +98,7 @@ const ProfileInfoForm = () => {
                 <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" 
                 id="birthdate" 
                 type="date"
+                value={formik.values.birthdate}
                 {...formik.getFieldProps('birthdate')} />
               </div>
               <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -103,6 +109,7 @@ const ProfileInfoForm = () => {
                 id="gender" 
                 type="text" 
                 placeholder="Female"
+                value={formik.values.gender}
                 {...formik.getFieldProps('gender')}
                  />
               </div>
@@ -114,6 +121,7 @@ const ProfileInfoForm = () => {
                 id="grid-nationality" 
                 type="text" 
                 placeholder="Filipino" 
+                value={formik.values.nationality}
                 {...formik.getFieldProps('nationality')}
                  />
               </div>
@@ -125,6 +133,7 @@ const ProfileInfoForm = () => {
                 id="grid-job-title" 
                 type="text" 
                 placeholder="Developer" 
+                value={formik.values.jobTitle}
                 {...formik.getFieldProps('jobTitle')} 
                 />
               </div>
@@ -139,7 +148,9 @@ const ProfileInfoForm = () => {
                 {...formik.getFieldProps('department')}
                 />
               </div>
-              <button type = "submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button type = "submit" 
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Save Update 
               </button>
             </div>
