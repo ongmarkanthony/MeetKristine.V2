@@ -100,11 +100,11 @@ const NavLink = () => {
             <li className="px-4 py-2 text-white hover:bg-blue-600">
               <a href="/UserManagement">User Management</a>
             </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/">Logout</a>
+            </li>
           </ul>
         )}
-        <button className="px-4 py-2 mt-2 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
-          Logout
-        </button>
       </div>
     </nav>
   );
