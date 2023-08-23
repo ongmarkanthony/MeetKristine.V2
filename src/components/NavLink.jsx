@@ -32,75 +32,75 @@ const NavLink = () => {
           </svg>
         </button>
       </div>
-      <div
-        className={`${isSidebarOpen ? "block" : "hidden"} md:block md:pb-6`}
-      >
+      <div className={`${isSidebarOpen ? "block" : "hidden"} md:block md:pb-6`}>
         {userRole === "User" && (
-        <ul className="mt-4">
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./UserDashboard">Dashboard</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./UserProfile">User Profile</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./BundyClock">Bundy Clock</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./TimeOff">Time Off</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./Documents">Upload Documents</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./EmployeeDirectory">Employee Directory</a>
-          </li>
-        </ul>
+          <ul className="mt-4">
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/UserDashboard">Dashboard</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/UserProfile">User Profile</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/BundyClock">Bundy Clock</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/TimeOff">Time Off</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/Documents">Upload Documents</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/EmployeeDirectory">Employee Directory</a>
+            </li>
+          </ul>
         )}
         {userRole === "Admin" && (
-            <ul className="mt-4">
+          <ul className="mt-4">
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./UserDashboard">Dashboard</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./UserProfile">User Profile</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./BundyClock">Bundy Clock</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./TimeOff">Time Off</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./Documents">Upload Documents</a>
-          </li>
-          <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./EmployeeDirectory">Employee Directory</a>
-          </li>
-            <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./AdminDashboard">Admin Dashboard</a>
+              <a href="/UserDashboard">Dashboard</a>
             </li>
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-            <a href="./Reports">Reports</a>
-            <ul className="pl-4"> 
-            <li className="py-1 text-white hover:bg-blue-600">
-            <a href="./Subpage1">Subpage 1</a>
-            </li>
-            <li className="py-1 text-white hover:bg-blue-600">
-            <a href="./Subpage2">Subpage 2</a>
-            </li>
-            <li className="py-1 text-white hover:bg-blue-600">
-            <a href="./Subpage3">Subpage 3</a>
-            </li>
-            <li className="py-1 text-white hover:bg-blue-600">
-             <a href="./Subpage4">Subpage 4</a>
-            </li>
-            </ul>
+              <a href="/UserProfile">User Profile</a>
             </li>
             <li className="px-4 py-2 text-white hover:bg-blue-600">
-           <a href="./UserManagement">User Management</a>
+              <a href="/BundyClock">Bundy Clock</a>
             </li>
-            </ul> 
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/TimeOff">Time Off</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/Documents">Upload Documents</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/EmployeeDirectory">Employee Directory</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/AdminDashboard">Admin Dashboard</a>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/Reports">Reports</a>
+              <ul className="pl-4">
+                <li className="py-1 text-white hover:bg-blue-600">
+                  <a href="/EmployeeSalaryReport">Employee Summary Report</a>
+                </li>
+                <li className="py-1 text-white hover:bg-blue-600">
+                  <a href="/EmployeePerDepartment">EmployeePerDepartment</a>
+                </li>
+                <li className="py-1 text-white hover:bg-blue-600">
+                  <a href="/EmployeeInformationReport">
+                    Employee Information Report
+                  </a>
+                </li>
+                <li className="py-1 text-white hover:bg-blue-600">
+                  <a href="/EmployeeLeavesSummaryReport">Employee</a>
+                </li>
+              </ul>
+            </li>
+            <li className="px-4 py-2 text-white hover:bg-blue-600">
+              <a href="/UserManagement">User Management</a>
+            </li>
+          </ul>
         )}
         <button className="px-4 py-2 mt-2 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
           Logout
@@ -109,6 +109,5 @@ const NavLink = () => {
     </nav>
   );
 };
-
 
 export default NavLink;
