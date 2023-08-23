@@ -28,43 +28,58 @@ import EmployeeLeaveReport from "./components/EmployeeLeaveSummaryReport";
 import TimeTracker from "./components/TimeTracker";
 import EmployeePerDepartment from "./components/PerDepartmentReport";
 import store from "./store/store";
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 
 const App = () => {
   const [loggedInUserRole, setLoggedInUserRole] = useState("admin");
 
   return (
     <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/Login" element={<LoginPage />} />
-        <Route path="/UserProfile" element={<UserProfile />} />
-        <Route path="/UserDashboard" element={<UserDashboard />} />
-        <Route path="/BundyClock" element={<BundyClock />} />
-        <Route path="/TimeOff" element={<TimeOff />} />
-        <Route path="/Documents" element={<Documents />} />
-        <Route path="/Management" element={<Management />} />
-        <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
-        <Route path="/Approval" element={<ApprovalPage />} />
-        <Route path="/AddUser" element={<AddUser />} />
-        <Route path="/PasswordResetForm" element={<PasswordResetForm />} />
-        <Route path="/EmployeeSalaryReport" element={<EmployeeSalaryReport />} />
-        <Route path="/PerformanceRatings" element={<PerformanceRatings />} />
-        <Route path="/AdminDashboard" element={<AdminDashboard />} />
-        <Route path="/PerDepartmentReport" element={<PerDepartmentReport />} />
-        <Route path="/UpdatePassword" element ={<UpdatePassword />} />
-        <Route path="/PasswordResetForm" element={<NewPassword />} />
-        <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
-        <Route path="/SalaryReport" element={<SalaryReport />} />
-        <Route path="/FileUpload" element={<FileUpload />} />
-        <Route path="/EmployeeInformationReport" element={<EmployeeInformationReport />} />
-        <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
-        <Route path= "/UserManagement" element={<UserManagement />} />
-        <Route path="/EmployeeLeaveSummaryReport" element={<EmployeeLeaveReport />} />
-        <Route path="/TimeTracker" element={<TimeTracker />} />
-        <Route path="/EmployeePerDepartment" element={<EmployeePerDepartment />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/UserProfile" element={<UserProfile />} />
+          <Route path="/UserDashboard" element={<UserDashboard />} />
+          <Route path="/BundyClock" element={<BundyClock />} />
+          <Route path="/TimeOff" element={<TimeOff />} />
+          <Route path="/Documents" element={<Documents />} />
+          <Route path="/Management" element={<Management />} />
+          <Route path="/EmployeeDirectory" element={<EmployeeDirectory />} />
+          <Route path="/Approval" element={<ApprovalPage />} />
+          <Route path="/AddUser" element={<AddUser />} />
+          <Route path="/PasswordResetForm" element={<PasswordResetForm />} />
+          <Route
+            path="/EmployeeSalaryReport"
+            element={<EmployeeSalaryReport />}
+          />
+          <Route path="/PerformanceRatings" element={<PerformanceRatings />} />
+          <Route path="/AdminDashboard" element={<AdminDashboard />} />
+          <Route
+            path="/PerDepartmentReport"
+            element={<PerDepartmentReport />}
+          />
+          <Route path="/UpdatePassword" element={<UpdatePassword />} />
+          <Route path="/PasswordResetForm" element={<NewPassword />} />
+          <Route path="/ProfileInfoForm" element={<ProfileInfoForm />} />
+          <Route path="/SalaryReport" element={<SalaryReport />} />
+          <Route path="/FileUpload" element={<FileUpload />} />
+          <Route
+            path="/EmployeeInformationReport"
+            element={<EmployeeInformationReport />}
+          />
+          <Route path="/EmpInfoReport" element={<EmpInfoReport />} />
+          <Route path="/UserManagement" element={<UserManagement />} />
+          <Route
+            path="/EmployeeLeaveSummaryReport"
+            element={<EmployeeLeaveReport />}
+          />
+          <Route path="/TimeTracker" element={<TimeTracker />} />
+          <Route
+            path="/EmployeePerDepartment"
+            element={<EmployeePerDepartment />}
+          />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );
 };
