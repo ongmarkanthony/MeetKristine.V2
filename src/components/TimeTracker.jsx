@@ -40,8 +40,8 @@ const Table = ({ rows }) => {
         {rows.map((row, index) => (
           <tr key={index}>
             <td className="border p-2">{row.date}</td>
-            <td className="border p-2">{row.timeIn}</td>
-            <td className="border p-2">{row.timeOut}</td>
+            <td className="border p-2">{row.time_in}</td>
+            <td className="border p-2">{row.time_out}</td>
             <td className="border p-2">{row.totalHours}</td>
           </tr>
         ))}
@@ -51,9 +51,9 @@ const Table = ({ rows }) => {
 };
 
 const TimeTracker = () => {
-  const [timeIn, setTimeIn] = useState(null);
-  const [timeOut, setTimeOut] = useState(null);
-  const [isTimeIn, setIsTimeIn] = useState(false);
+  const [time_in, setTime_In] = useState(null);
+  const [time_out, setTime_Out] = useState(null);
+  const [isTime_In, setIsTime_In] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [records, setRecords] = useState([]);
 
@@ -68,34 +68,34 @@ const TimeTracker = () => {
   }, []);
 
   const handleTimeIn = () => {
-    const currentTimeIn = new Date();
-    setTimeIn(currentTimeIn);
-    setIsTimeIn(true);
+    const currentTime_In = new Date();
+    setTime_In(currentTime_In);
+    setIsTime_In(true);
     setRecords((prevRecords) => [
       ...prevRecords,
       {
         date: currentDate.toLocaleDateString(),
-        timeIn: currentTimeIn.toLocaleTimeString(),
-        timeOut: "",
+        time_in: currentTime_In.toLocaleTimeString(),
+        time_out: "",
         totalHours: ""
       },
     ]);
-    axios.post('http://backend-url/time-in', {date: currentDate.toLocaleDateString(), timeIn: currentTimeIn.toLocaleTimeString()});
+    axios.post('http://localhost:8000/api/v1/time-events', {date: currentDate.toLocaleDateString(), time_in: currentTime_In.toLocaleTimeString()});
   };
 
-  const handleTimeOut = () => {
+  const handleTime_Out = () => {
     const currentTimeOut = new Date();
-    setTimeOut(currentTimeOut);
-    setIsTimeIn(false);
+    setTime_Out(currentTimeOut);
+    setIsTime_In(false);
     setRecords((prevRecords) => {
       const updatedRecords = [...prevRecords];
-      const timeIn = new Date(updatedRecords[updatedRecords.length - 1].timeIn);
-      const totalHours = (currentTimeOut - timeIn) / (1000 * 60 * 60);
-      updatedRecords[updatedRecords.length - 1].timeOut = currentTimeOut.toLocaleTimeString();
-      updatedRecords[updatedRecords.length - 1].totalHours = totalHours.toFixed(2);
+      const time_in = new Date(updatedRecords[updatedRecords.length - 1].time_in); // Corrected variable name
+      const totalHours = (currentTimeOut - time_in) / (1000 * 60 * 60); // Use currentTimeOut instead of currentTime_Out
+      updatedRecords[updatedRecords.length - 1].time_out = currentTimeOut.toLocaleTimeString(); // Corrected variable name
+      updatedRecords[updatedRecords.length - 1].totalHours = totalHours.toFixed(2); // Corrected variable name
       return updatedRecords;
     });
-    axios.post('http://backend-url/time-out', {date: currentDate.toLocaleDateString(), timeOut: currentTimeOut.toLocaleTimeString()});
+    axios.post('http://localhost:8000/api/v1/time-events', {date: currentDate.toLocaleDateString(), time_out: currentTimeOut.toLocaleTimeString()});
   };
 
   return (
@@ -111,19 +111,19 @@ const TimeTracker = () => {
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
           onClick={handleTimeIn}
-          disabled={isTimeIn}
+          disabled={isTime_In}
         >
           Time In
         </button>
         <button
           className="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
-          onClick={handleTimeOut}
-          disabled={!isTimeIn}
+          onClick={handleTime_Out}
+          disabled={!isTime_In}
         >
           Time Out
         </button>
         <div className="text-xl sm:text-2xl font-semibold text-center">
-        {isTimeIn ? "Time In: " + (timeIn ? timeIn.toLocaleTimeString() : "") : "Time Out: " + (timeOut ? timeOut.toLocaleTimeString() : "")}
+        {isTime_In ? "Time In: " + (time_in ? time_in.toLocaleTimeString() : "") : "Time Out: " + (time_out ? time_out.toLocaleTimeString() : "")}
         </div>
         <Table rows={records} />
       </div>
